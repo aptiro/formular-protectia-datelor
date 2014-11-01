@@ -11,9 +11,11 @@
 
 <body>
 <div class="container">
-  <p>Privacy complaint</p>
+<h1>Privacy complaint</h1>
 
-  <div ng-controller="DataProtectionFormController">
+<div class="row">
+
+  <div class="col-md-4" ng-controller="DataProtectionFormController">
 
     <form novalidate>
 
@@ -145,8 +147,9 @@
         <button class="btn btn-default" ng-click="reset()">Reset</button>
       </div>
     </form>
+    </div>
 
-    <div id="preview">
+    <div id="preview" class="col-md-8">
       <div id="document">
         <p>
           {{plaintiff.name || '(nume)'}} cu domiciliul/reședința în
