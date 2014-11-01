@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html ng-app="dataProtection">
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Privacy complaint</title>
-
-
+<head>
+  <meta charset="UTF-8">
+  <title>Privacy complaint</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap-theme.min.css">
 </head>
+
 <body>
+<div class="container">
+  <p>Privacy complaint</p>
 
-<p>Privacy complaint</p>
-
-<div ng-controller="DataProtectionFormController">
-
+  <div ng-controller="DataProtectionFormController">
     <form novalidate>
-        Name: <input type="text" ng-model="user.name"/><br/>
-        E-mail: <input type="email" ng-model="user.email"/><br/>
-        Gender: <input type="radio" ng-model="user.gender" value="male"/>male
-        <input type="radio" ng-model="user.gender" value="female"/>female<br/>
-        <button ng-click="reset()">RESET</button>
-        <button ng-click="update(user)">SAVE</button>
-
+      Name: <input type="text" ng-model="user.name"/><br/>
+      E-mail: <input type="email" ng-model="user.email"/><br/>
+      Gender: <input type="radio" ng-model="user.gender" value="male"/>male
+      <input type="radio" ng-model="user.gender" value="female"/>female<br/>
+      <button ng-click="reset()">RESET</button>
+      <button ng-click="update(user)">SAVE</button>
     </form>
 
     <div id="document">
-        <h1>The document</h1>
-        Name: {{user.name}} <br/>
-        E-mail: {{user.email}}
+      <h1>The document</h1>
+      Name: {{user.name}} <br/>
+      E-mail: {{user.email}}
     </div>
+  </div>
 
-</div>
-
-<div>
-    <button id="download-pdf">Download PDF</button>
+  <div>
+    <button id="download-pdf" class="btn btn-primary">Download PDF</button>
+  </div>
 </div>
 
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
 <script src="app.js"></script>
 </body>
