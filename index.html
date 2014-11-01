@@ -25,9 +25,64 @@
 
     <div id="preview">
       <div id="document">
-        <h1>The document</h1>
-        <p>Name: <span class="variable">{{user.name}}</span></p>
-        <p>E-mail: <span class="variable">{{user.email}}</span></p>
+        <p>
+          {{plaintiff.name || '(nume)'}} cu domiciliul/reședința în
+          {{plaintiff.address || '(adresă)'}},
+          {{plaintiff.telephone || '(telefon)'}},
+          <span ng-if="plaintiff.email"> {{plaintiff.email}},</span>
+          în temeiul art. 25 din legea nr. 677/2001 pentru protecția
+          persoanelor cu privire la prelucrarea datelor cu caracter personal și
+          libera circulație a acestor date, vă aduc la cunoștință următoarele:
+        </p>
+
+        <p>
+          {{operator || '(operator)'}}, cu sediul în
+          {{operator_address || '(adresă)'}} mi-a încălcat dreptul
+          de acces, întrucât
+
+          <span ng-if="request.hasanswer">
+            nu mi-a furnizat următoarele informații pe care i le-am solicitat
+            prin scrisoarea din data de {{request.date || '(dată)'}}:
+            {{request.details || '(detalii)'}}
+            pe care operatorul nu le-a comunicat petentului.
+          </span>
+
+          <span ng-if="! request.hasanswer">
+            nu mi-a furnizat informațiile pe care i le-am solicitat prin
+            scrisoarea din data de {{request.date || '(dată)'}}:
+            {{request.details || '(detalii)'}}, în termenul de 15
+            zile prevăzute de art. 13 (3) din Legea nr. 677/2001.
+          </span>
+        </p>
+
+        <p ng-if="other_reasons">{{other_reasons}}</p>
+
+        <p>
+          Anexez copia scrisorii trimise operatorului care face dovada datei
+          la care m-am adresat acestuia.
+        </p>
+
+        <p>
+          Față de cele de mai sus, vă rog să dispuneți măsurile legale pentru a
+          primi informațiile solicitate în baza Legii nr. 677/2001.
+        </p>
+
+        <p ng-if="private">
+          Doresc ca demersurile efectuate în legătură cu
+          soluționarea acestei plângeri să nu fie făcute publice.
+        </p>
+
+        <p ng-if="representative">
+          Plângerea este depusă prin reprezentant {{representative}}.
+          {{representative.name}} cu domiciliul/reședința în
+          {{representative.address}}, {{representative.telephone}},
+          <span ng-if="representative.email">{{representative.email}},</span>
+          în calitate de {{representative.role}}
+        </p>
+
+        <p>Data</p>
+
+        <p>Semnătura</p>
       </div>
 
       <button id="download-pdf" class="btn btn-primary">
