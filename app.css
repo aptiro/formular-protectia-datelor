@@ -5,3 +5,10 @@
     outline: 1px solid #888;
     box-shadow: 0 0 1em #555;
 }
+
+
+@media screen {
+    .variable {
+        background: yellow;
+    }
+}
