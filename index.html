@@ -14,13 +14,50 @@
   <p>Privacy complaint</p>
 
   <div ng-controller="DataProtectionFormController">
+
     <form novalidate>
-      Name: <input type="text" ng-model="user.name"/><br/>
-      E-mail: <input type="email" ng-model="user.email"/><br/>
-      Gender: <input type="radio" ng-model="user.gender" value="male"/>male
-      <input type="radio" ng-model="user.gender" value="female"/>female<br/>
-      <button ng-click="reset()">RESET</button>
-      <button ng-click="update(user)">SAVE</button>
+
+      <input type="checkbox" ng-model="respunsNesatisfacator"/>Am trimis cerere la operator și nu am primit răspuns în
+      15 zile/am
+      primit răspuns nesatisfăcător <br/>
+      <input type="checkbox" ng-model="cerereTrimisaLaOperator"/>Nu am depus o cerere în instanță<br/>
+
+      <div ng-show="respunsNesatisfacator && cerereTrimisaLaOperator">
+        <!-- Zona identificare petent -->
+        Name: <input type="text" ng-model="plaintiff.name" required><br/>
+        Domiciliu: <input type="text" ng-model="plaintiff.address" required/> <br/>
+        Telefon: <input type="text" ng-model="plaintiff.telephone" required placeholder="0742xxxxxxxx"/><br/>
+        E-mail: <input type="email" ng-model="plaintiff.email"/><br/>
+
+        <!-- Zona de identificare a operatorului -->
+        Numele operatorului/companie: <input type="text" required ng-model="operator.name"><br/>
+        Sediu: <input type="text" required ng-model="operator.address"/> <br/>
+        E-mail: <input type="email" ng-model="operator.email"/><br/>
+        Site: <input type="text" ng-model="operator.website"/><br/>
+
+        <!-- Zona identificare cerere -->
+
+        Data cerere anterioară: <input type="date" required ng-model="request.date"/> <br/>
+        Sunteti nemultumiti de cererea anterioare: <input type="checkbox" ng-model="request.hasanswer"/> <br/>
+        Detalii cerere: <textarea rows="5" required ng-model="request.details"/> <br/>
+        Alte motive: <textarea rows="5" ng-model="request.other"></textarea> <br/>
+
+
+        Semnătura: <input type="text" ng-model=""/> <br/>
+
+        <!-- Zona de identificare a reprezentanntului, dacă se aplică -->
+        <input type="checkbox" ng-model="withRepresentative"/>Se depune personal sau prin reprezentant (offline)<br/>
+
+        <div ng-show="withRepresentative">
+          Nume: <input type="text" ng-model="representative.name"/> <br/>
+          Address: <input type="text" ng-model="representative.address"/> <br/>
+          Telefon: <input type="text" ng-model="representative.telephone"/> <br/>
+          Email: <input type="email" ng-model="representative.email"/> <br/>
+          In calitate de: <input type="text" ng-model="representative.role"/> <br/>
+        </div>
+        <button ng-click="reset()">RESET</button>
+        <button ng-click="update(user)">SAVE</button>
+      </div>
     </form>
 
     <div id="preview">
@@ -36,8 +73,8 @@
         </p>
 
         <p>
-          {{operator || '(operator)'}}, cu sediul în
-          {{operator_address || '(adresă)'}} mi-a încălcat dreptul
+          {{operator.name || '(operator)'}}, cu sediul în
+          {{operator.address || '(adresă)'}} mi-a încălcat dreptul
           de acces, întrucât
 
           <span ng-if="request.hasanswer">
@@ -55,7 +92,7 @@
           </span>
         </p>
 
-        <p ng-if="other_reasons">{{other_reasons}}</p>
+        <p ng-if="request.other">{{request.other}}</p>
 
         <p>
           Anexez copia scrisorii trimise operatorului care face dovada datei
@@ -72,12 +109,10 @@
           soluționarea acestei plângeri să nu fie făcute publice.
         </p>
 
-        <p ng-if="representative">
-          Plângerea este depusă prin reprezentant {{representative}}.
-          {{representative.name}} cu domiciliul/reședința în
+        <p ng-if="withRepresentative">
+          Plângerea este depusă prin reprezentant {{representative.name}} cu domiciliul/reședința în
           {{representative.address}}, {{representative.telephone}},
-          <span ng-if="representative.email">{{representative.email}},</span>
-          în calitate de {{representative.role}}
+          <span ng-if="representative.email">{{representative.email}},</span> în calitate de {{representative.role | lowercase }}
         </p>
 
         <p>Data</p>
