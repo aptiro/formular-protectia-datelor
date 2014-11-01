@@ -1,12 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="dataProtection">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Privacy complaint</title>
+
+
 </head>
 <body>
 
 <p>Privacy complaint</p>
+
+
+<div ng-controller="DataProtectionFormController">
+
+    <form novalidate>
+        Name: <input type="text" ng-model="user.name" /><br />
+        E-mail: <input type="email" ng-model="user.email" /><br />
+        Gender: <input type="radio" ng-model="user.gender" value="male" />male
+        <input type="radio" ng-model="user.gender" value="female" />female<br />
+        <button ng-click="reset()">RESET</button>
+        <button ng-click="update(user)">SAVE</button>
+
+    </form>
+
+    <div id="complaint">
+        Name: {{user.name}} <br/>
+        E-mail: {{user.email}}
+    </div>
+
+</div>
+
+
+
+<script src="bower_components/angular/angular.min.js"></script>
+
+<script>
+    angular.module('dataProtection', [])
+            .controller('DataProtectionFormController', ['$scope', function ($scope) {
+
+                // controller logic goe here
+
+            }]);
+</script>
 
 </body>
 </html>
