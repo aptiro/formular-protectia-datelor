@@ -152,36 +152,38 @@
     <div id="preview" class="col-md-8">
       <div id="document">
         <p>
-          {{plaintiff.name || '(nume)'}} cu domiciliul/reședința în
-          {{plaintiff.address || '(adresă)'}},
-          {{plaintiff.telephone || '(telefon)'}},
-          <span ng-if="plaintiff.email"> {{plaintiff.email}},</span>
+          <v>{{plaintiff.name || '(nume)'}}</v> cu domiciliul/reședința în
+          <v>{{plaintiff.address || '(adresă)'}}</v>,
+          <v>{{plaintiff.telephone || '(telefon)'}}</v>,
+          <span ng-if="plaintiff.email"> <v>{{plaintiff.email}}</v>,</span>
           în temeiul art. 25 din legea nr. 677/2001 pentru protecția
           persoanelor cu privire la prelucrarea datelor cu caracter personal și
           libera circulație a acestor date, vă aduc la cunoștință următoarele:
         </p>
 
         <p>
-          {{operator.name || '(operator)'}}, cu sediul în
-          {{operator.address || '(adresă)'}} mi-a încălcat dreptul
+          <v>{{operator.name || '(operator)'}}</v>, cu sediul în
+          <v>{{operator.address || '(adresă)'}}</v> mi-a încălcat dreptul
           de acces, întrucât
 
           <span ng-if="request.hasanswer">
             nu mi-a furnizat următoarele informații pe care i le-am solicitat
-            prin scrisoarea din data de {{request.date|date: 'd/M/yyyy'}}:
-            {{request.details || '(detalii)'}}
+            prin scrisoarea din data de
+            <v>{{(request.date|date: 'd/M/yyyy') || '(data)'}}</v>:
+            <v>{{request.details || '(detalii)'}}</v>
             pe care operatorul nu le-a comunicat petentului.
           </span>
 
           <span ng-if="! request.hasanswer">
             nu mi-a furnizat informațiile pe care i le-am solicitat prin
-            scrisoarea din data de {{request.date|date: 'd/M/yyyy'}}:
-            {{request.details || '(detalii)'}}, în termenul de 15
+            scrisoarea din data de
+            <v>{{(request.date|date: 'd/M/yyyy') || '(data)'}}</v>:
+            <v>{{request.details || '(detalii)'}}</v>, în termenul de 15
             zile prevăzute de art. 13 (3) din Legea nr. 677/2001.
           </span>
         </p>
 
-        <p ng-if="request.other">{{request.other}}</p>
+        <p ng-if="request.other"><v>{{request.other}}</v></p>
 
         <p>
           Anexez copia scrisorii trimise operatorului care face dovada datei
@@ -199,9 +201,12 @@
         </p>
 
         <p ng-if="withRepresentative">
-          Plângerea este depusă prin reprezentant {{representative.name}} cu domiciliul/reședința în
-          {{representative.address}}, {{representative.telephone}},
-          <span ng-if="representative.email">{{representative.email}},</span> în calitate de {{representative.role | lowercase }}
+          Plângerea este depusă prin reprezentant
+          <v>{{representative.name}}</v> cu domiciliul/reședința în
+          <v>{{representative.address}}</v>,
+          <v>{{representative.telephone}}</v>,
+          <span ng-if="representative.email"><v>{{representative.email}}</v>,</span>
+          în calitate de <v>{{representative.role | lowercase }}</v>
         </p>
 
         <p>Data</p>
