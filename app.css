@@ -1,9 +1,24 @@
 #document {
-    margin: 10px;
     padding: 15mm;
     width: 210mm;
     outline: 1px solid #888;
     box-shadow: 0 0 1em #555;
+}
+
+
+#preview {
+    position: relative;
+    padding: 10px;
+}
+
+
+#download-pdf {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    position: absolute;
+    top: 9px;
+    left: 9px;
 }
 
 
