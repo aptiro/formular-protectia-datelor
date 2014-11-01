@@ -13,9 +13,9 @@
 <div class="container">
 <h1>Privacy complaint</h1>
 
-<div class="row">
+<div class="row" ng-controller="DataProtectionFormController">
 
-  <div class="col-md-4" ng-controller="DataProtectionFormController">
+  <div class="col-md-4">
 
     <form novalidate>
 
@@ -44,7 +44,7 @@
         -->
 
         <div class="form-group">
-          <label for="form-plaintiff.name">Name:</label>
+          <label for="form-plaintiff.name">Nume:</label>
           <input id="form-plaintiff.name" type="text" class="form-control" ng-model="plaintiff.name" required>
         </div>
 
@@ -95,7 +95,7 @@
         <div class="checkbox">
           <label>
             <input type="checkbox" ng-model="request.hasanswer">
-            Sunteti nemultumiti de cererea anterioare:
+            Sunt nemulțumit de cererea anterioară
           </label>
         </div>
 
@@ -168,14 +168,14 @@
 
           <span ng-if="request.hasanswer">
             nu mi-a furnizat următoarele informații pe care i le-am solicitat
-            prin scrisoarea din data de {{request.date || '(dată)'}}:
+            prin scrisoarea din data de {{request.date|date: 'd/M/yyyy'}}:
             {{request.details || '(detalii)'}}
             pe care operatorul nu le-a comunicat petentului.
           </span>
 
           <span ng-if="! request.hasanswer">
             nu mi-a furnizat informațiile pe care i le-am solicitat prin
-            scrisoarea din data de {{request.date || '(dată)'}}:
+            scrisoarea din data de {{request.date|date: 'd/M/yyyy'}}:
             {{request.details || '(detalii)'}}, în termenul de 15
             zile prevăzute de art. 13 (3) din Legea nr. 677/2001.
           </span>
