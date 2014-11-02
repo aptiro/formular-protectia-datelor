@@ -9,6 +9,12 @@
 
         }]);
 
+    $('.forward').click(function(evt) {
+        evt.preventDefault();
+        var href = $(this).attr('href');
+        $('[href="' + href + '"][role=tab]').click();
+    });
+
     $('#download-pdf').click(function (evt) {
         evt.preventDefault();
 
