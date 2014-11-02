@@ -16,6 +16,10 @@
     });
 
     $('.download-pdf').click(function (evt) {
+        $('form').submit();
+    });
+
+    $('form').submit(function (evt) {
         evt.preventDefault();
 
         var doc = new jsPDF();
