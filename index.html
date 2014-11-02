@@ -11,7 +11,7 @@
 
 <body>
 <div class="container">
-  <h1>Privacy complaint</h1>
+  <h1>Model de plăngere către Autoritatea de Protecție a Datelor (ANSPDCP)</h1>
 
   <div class="row" ng-controller="DataProtectionFormController">
 
@@ -22,14 +22,14 @@
         <div class="checkbox">
           <label>
             <input type="checkbox" ng-model="raspunsNesatisfacator">
-            Am trimis cerere la operator și nu am primit răspuns în 15 zile/am primit răspuns nesatisfăcător
+            Confim că am trimis cerere către cel care mi-a colectat datele personale și nu am primit răspuns în 15 zile/am primit răspuns nesatisfăcător
           </label>
         </div>
 
         <div class="checkbox">
           <label>
             <input type="checkbox" ng-model="cerereTrimisaLaOperator">
-            Nu am depus o cerere în instanță
+            Confirm că nu am depus o cerere în instanță
           </label>
         </div>
 
@@ -47,7 +47,7 @@
 
               <!-- Zona identificare petent -->
               <div class="form-group">
-                <label for="form-plaintiff.name">Nume:</label>
+                <label for="form-plaintiff.name">Nume și prenume:</label>
                 <input id="form-plaintiff.name" type="text" class="form-control" ng-model="plaintiff.name" required>
               </div>
 
@@ -198,7 +198,13 @@
 
     <div id="preview" class="col-md-8">
       <div id="document">
-        <p>
+      
+        <p style="text-align: center;"><strong>Către</strong>
+<strong>AUTORITATEA NAŢIONALĂ DE SUPRAVEGHERE</strong>
+<strong>A PRELUCRĂRII DATELOR CU CARACTER PERSONAL</strong>
+<strong>B-dul G-ral Gh. Magheru nr. 28-31 sector 1 Bucureşti</strong>
+</p>
+  <p>
           <v>{{plaintiff.name || '(nume)'}}</v> cu domiciliul/reședința în
           <v>{{plaintiff.address || '(adresă)'}}</v>,
           <v>{{plaintiff.telephone || '(telefon)'}}</v>,
