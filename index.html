@@ -66,6 +66,41 @@
                 <input id="form-plaintiff.email" type="email" class="form-control" ng-model="plaintiff.email">
               </div>
 
+              <!-- Zona de identificare a reprezentantului, dacă se aplică -->
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" ng-model="withRepresentative">
+                  Se depune prin reprezentant (offline)
+                </label>
+              </div>
+
+              <div ng-show="withRepresentative">
+                <div class="form-group">
+                  <label for="form-representative.name">Nume:</label>
+                  <input id="form-representative.name" type="text" class="form-control" ng-model="representative.name">
+                </div>
+
+                <div class="form-group">
+                  <label for="form-representative.address">Address:</label>
+                  <input id="form-representative.address" type="text" class="form-control" ng-model="representative.address">
+                </div>
+
+                <div class="form-group">
+                  <label for="form-representative.telephone">Telefon:</label>
+                  <input id="form-representative.telephone" type="text" class="form-control" ng-model="representative.telephone">
+                </div>
+
+                <div class="form-group">
+                  <label for="form-representative.email">Email:</label>
+                  <input id="form-representative.email" type="email" class="form-control" ng-model="representative.email">
+                </div>
+
+                <div class="form-group">
+                  <label for="form-representative.role">In calitate de:</label>
+                  <input id="form-representative.role" type="text" class="form-control" ng-model="representative.role">
+                </div>
+              </div>
+
             </div>
 
             <div role="tabpanel" class="tab-pane" id="operator">
@@ -121,42 +156,6 @@
             </div>
 
             <div role="tabpanel" class="tab-pane" id="reprezentant">
-
-              <!-- Zona de identificare a reprezentanntului, dacă se aplică -->
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" ng-model="withRepresentative">
-                  Se depune prin reprezentant (offline)
-                </label>
-              </div>
-
-              <div ng-show="withRepresentative">
-                <div class="form-group">
-                  <label for="form-representative.name">Nume:</label>
-                  <input id="form-representative.name" type="text" class="form-control" ng-model="representative.name">
-                </div>
-
-                <div class="form-group">
-                  <label for="form-representative.address">Address:</label>
-                  <input id="form-representative.address" type="text" class="form-control" ng-model="representative.address">
-                </div>
-
-                <div class="form-group">
-                  <label for="form-representative.telephone">Telefon:</label>
-                  <input id="form-representative.telephone" type="text" class="form-control" ng-model="representative.telephone">
-                </div>
-
-                <div class="form-group">
-                  <label for="form-representative.email">Email:</label>
-                  <input id="form-representative.email" type="email" class="form-control" ng-model="representative.email">
-                </div>
-
-                <div class="form-group">
-                  <label for="form-representative.role">In calitate de:</label>
-                  <input id="form-representative.role" type="text" class="form-control" ng-model="representative.role">
-                </div>
-
-              </div>
 
             </div>
           </div>
