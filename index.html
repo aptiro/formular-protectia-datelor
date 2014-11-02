@@ -51,7 +51,7 @@
 
               <!-- Zona identificare petent -->
               <span class="help-block">
-           Petentul este persoana care depune cererea și a cărui drepturi cu privire la datele personale au fost încălcate.
+          <strong> Petentul </strong>este persoana care depune cererea și a cărui drepturi cu privire la datele personale au fost încălcate.
           </span>
               <div class="form-group">
                 <label for="form-plaintiff.name">Nume și prenume:</label>
@@ -80,6 +80,9 @@
                   Se depune prin reprezentant
                 </label>
               </div>
+               <span class="help-block">
+          <strong> Reprezentantul </strong> este un o altă persoană decât cea a cărui drepturi au fost încălcate și care depune cererea în numele petentului.
+          </span>
 
               <div ng-show="withRepresentative">
                 <div class="form-group">
@@ -106,6 +109,11 @@
                   <label for="form-representative.role">În calitate de:</label>
                   <input id="form-representative.role" type="text" class="form-control" ng-model="representative.role">
                 </div>
+                  <span class="help-block">
+          Nu uita să adaugi împuternicirea în original!
+          </span>
+                
+                
               </div>
 
               <p>
@@ -120,8 +128,11 @@
             <div role="tabpanel" class="tab-pane" id="operator">
 
               <!-- Zona de identificare a operatorului -->
+              <span class="help-block">
+          <strong> Operatorul </strong>este persoana fizică sau juridică care ți-a colectat sau folosit datele persoanel în mod ilegal.
+          </span>
               <div class="form-group">
-                <label for="form-operator.name">Numele persoanei care a prelucrat datele ilegal:</label>
+                <label for="form-operator.name">Numele operatorului:</label>
                 <input id="form-operator.name" type="text" required class="form-control" ng-model="operator.name">
               </div>
 
@@ -187,6 +198,9 @@
 
               <div class="form-group">
                 <label for="form-request.other">Alte motive:</label>
+                <span class="help-block" ng-if="! request.hasanswer">
+                  Se enumeră alte motive legate de exercitarea dreptului de acces.
+                </span>
                 <textarea id="form-request.other" rows="5" class="form-control" ng-model="request.other"></textarea>
               </div>
 
