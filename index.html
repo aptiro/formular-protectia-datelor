@@ -179,7 +179,7 @@
 
               <div class="form-group">
                 <label for="form-request.date">Dată cerere către operator:</label>
-                <input id="form-request.date" type="date" required class="form-control" ng-model="request.date">
+                <input id="form-request.date" type="date" required class="form-control" ng-model="request.date" placeholder="zi/luna/an">
               </div>
 
               <div class="form-group">
@@ -266,8 +266,10 @@
 
         <p>
           <v>{{operator.name || '(operator)'}}</v>, cu sediul în
-          <v>{{operator.address || '(adresă)'}}</v> mi-a încălcat <strong> dreptul
-          de acces</strong>, întrucât
+          <v>{{operator.address || '(adresă)'}}</v>,
+          <span ng-if="operator.email">email <v>{{operator.email || '(adresă)'}}</v>,</span>
+          <span ng-if="operator.website">site web <v>{{operator.website || '(adresă)'}}</v>,</span>
+          mi-a încălcat <strong>dreptul de acces</strong>, întrucât
 
           <span ng-if="request.hasanswer">
             nu mi-a furnizat următoarele informații pe care i le-am solicitat
