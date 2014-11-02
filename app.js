@@ -5,6 +5,7 @@
         .controller('DataProtectionFormController', ['$scope', function ($scope) {
 
             // controller logic goe here
+            $scope.date = d3.time.day(new Date());
 
         }]);
 
