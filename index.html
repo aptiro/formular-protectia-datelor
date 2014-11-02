@@ -29,7 +29,7 @@
         <div class="checkbox">
           <label>
             <input type="checkbox" ng-model="cerereTrimisaLaOperator">
-            Confirm că nu am depus o cerere în instanță
+            Confirm că nu am depus o cerere în instanță în acest caz
           </label>
         </div>
 
@@ -81,7 +81,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="form-representative.address">Address:</label>
+                  <label for="form-representative.address">Adresă:</label>
                   <input id="form-representative.address" type="text" class="form-control" ng-model="representative.address">
                 </div>
 
@@ -96,7 +96,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="form-representative.role">In calitate de:</label>
+                  <label for="form-representative.role">În calitate de:</label>
                   <input id="form-representative.role" type="text" class="form-control" ng-model="representative.role">
                 </div>
               </div>
@@ -114,7 +114,7 @@
 
               <!-- Zona de identificare a operatorului -->
               <div class="form-group">
-                <label for="form-operator.name">Numele operatorului/companie:</label>
+                <label for="form-operator.name">Numele persoanei care a prelucrat datele ilegal:</label>
                 <input id="form-operator.name" type="text" required class="form-control" ng-model="operator.name">
               </div>
 
@@ -146,14 +146,14 @@
 
               <!-- Zona identificare cerere -->
               <div class="form-group">
-                <label for="form-request.date">Data cerere anterioară:</label>
+                <label for="form-request.date">Dată cerere către operator:</label>
                 <input id="form-request.date" type="date" required class="form-control" ng-model="request.date">
               </div>
 
               <div class="checkbox">
                 <label>
                   <input type="checkbox" ng-model="request.hasanswer">
-                  Sunt nemulțumit de cererea anterioară
+                  Sunt nemulțumit de rășpunsul la cererea către operator
                 </label>
               </div>
 
@@ -179,14 +179,16 @@
             <div role="tabpanel" class="tab-pane" id="finaize">
 
               <div class="form-group">
-                <label for="form-date">Data cerere anterioară:</label>
+                <label for="form-date">Data prezentei cereri:</label>
                 <input id="form-date" type="date" required class="form-control" ng-model="date">
               </div>
 
               <div class="form-group">
-                <label for="form-signature">Semnătură (introduceți nueme):</label>
+                <label for="form-signature">Semnătură (introduceți nume):</label>
                 <input id="form-signature" type="text" class="form-control" ng-model="signature" required>
               </div>
+              
+              Nu uita să depui și anexele, inclusiv copia după cererea către operator.
 
             </div>
           </div>
