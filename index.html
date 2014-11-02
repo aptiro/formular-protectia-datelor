@@ -135,8 +135,10 @@
 
               <!-- Zona de identificare a operatorului -->
               <span class="help-block">
-          <strong> Operatorul </strong>este persoana fizică sau juridică care ți-a colectat sau folosit datele persoanel în mod ilegal.
-          </span>
+                <strong>Operatorul</strong> este persoana fizică sau juridică
+                care ți-a colectat sau folosit datele persoanel în mod ilegal.
+              </span>
+
               <div class="form-group">
                 <label for="form-operator.name">Numele operatorului:</label>
                 <input id="form-operator.name" type="text" required class="form-control" ng-model="operator.name">
@@ -237,17 +239,21 @@
                 <label for="form-signature">Semnătură (introduceți nume și prenume):</label>
                 <input id="form-signature" type="text" class="form-control" ng-model="signature" required>
               </div>
-              
-             <strong>Nu uita să depui și anexele, inclusiv copia după cererea către operator!</strong> 
-             <br>
+
+              <p>
+                <strong>Nu uita să depui și anexele, inclusiv copia după
+                cererea către operator!</strong>
+              </p>
+
+             <div class="form-group">
+               <button class="btn btn-primary download-pdf">
+                 <i class="fa fa-download"></i>
+                 Download PDF
+               </button>
+             </div>
 
             </div>
           </div>
-
-          <button class="btn btn-primary download-pdf">
-            <i class="fa fa-download"></i>
-            Download PDF
-          </button>
         </div>
       </form>
     </div>
