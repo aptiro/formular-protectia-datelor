@@ -15,7 +15,7 @@
         $('[href="' + href + '"][role=tab]').click();
     });
 
-    $('#download-pdf').click(function (evt) {
+    $('.download-pdf').click(function (evt) {
         evt.preventDefault();
 
         var doc = new jsPDF();
