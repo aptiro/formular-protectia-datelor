@@ -150,10 +150,17 @@
                 <input id="form-request.date" type="date" required class="form-control" ng-model="request.date">
               </div>
 
-              <div class="checkbox">
+              <div class="radio">
                 <label>
-                  <input type="checkbox" ng-model="request.hasanswer">
-                  Sunt nemulțumit de răspunsul la cererea către operator
+                  <input type="radio" name="request.hasanswer" ng-model="request.hasanswer" ng-value="false">
+                  Nu am primit răspuns
+                </label>
+              </div>
+
+              <div class="radio">
+                <label>
+                  <input type="radio" name="request.hasanswer" ng-model="request.hasanswer" ng-value="true">
+                  Am primit răspuns incomplet
                 </label>
               </div>
 
