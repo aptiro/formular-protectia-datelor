@@ -150,11 +150,6 @@
             <div role="tabpanel" class="tab-pane" id="cerere">
 
               <!-- Zona identificare cerere -->
-              <div class="form-group">
-                <label for="form-request.date">Dată cerere către operator:</label>
-                <input id="form-request.date" type="date" required class="form-control" ng-model="request.date">
-              </div>
-
               <div class="radio">
                 <label>
                   <input type="radio" name="request.hasanswer" ng-model="request.hasanswer" ng-value="false">
@@ -170,7 +165,21 @@
               </div>
 
               <div class="form-group">
+                <label for="form-request.date">Dată cerere către operator:</label>
+                <input id="form-request.date" type="date" required class="form-control" ng-model="request.date">
+              </div>
+
+              <div class="form-group">
                 <label for="form-request.details">Detalii cerere:</label>
+
+                <span class="help-block" ng-if="request.hasanswer">
+                  Se enumeră informațiile pe care operatorul nu le-a comunicat
+                </span>
+
+                <span class="help-block" ng-if="! request.hasanswer">
+                  Se enumeră informațiile pe care petentul le-a solicitat operatorului
+                </span>
+
                 <textarea id="form-request.details" rows="5" required class="form-control" ng-model="request.details"></textarea>
               </div>
 
