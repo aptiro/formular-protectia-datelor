@@ -2,15 +2,18 @@
     'use strict';
 
     angular.module('dataProtection', [
-        'ngStorage'
-    ]).controller('DataProtectionFormController', function ($scope, $localStorage) {
+        'ngStorage',
+        'ngQuickDate'
+    ]).controller('DataProtectionFormController', function ($scope, $localStorage, $sessionStorage) {
 
-        $scope.$storage = $localStorage.$default({
+        $scope.$storage = $sessionStorage;
+
+        $localStorage.$default({
             plaintiff: $localStorage.plaintiff || {},
             representative: $localStorage.representative || {},
             operator: $localStorage.operator || {},
             request: $localStorage.request || {},
-            date: $localStorage.date || new Date(),
+//            date: $localStorage.date ,
             signature: $localStorage.signature || ''
         });
 

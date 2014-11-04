@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="bower_components/ngQuickDate/dist/ng-quick-date.css">
   <link rel="stylesheet" href="app.css">
 </head>
 
@@ -117,8 +118,8 @@
                   <span class="help-block">
           Nu uita să adaugi împuternicirea în original!
           </span>
-                
-                
+
+
               </div>
 
               <p>
@@ -185,8 +186,10 @@
               </div>
 
               <div class="form-group">
-                <label for="form-request.date">Dată cerere către operator:</label>
-                <input id="form-request.date" type="date" required class="form-control" ng-model="$storage.request.date" placeholder="an-luna-zi">
+                <label>Dată cerere către operator:
+                <quick-datepicker ng-model='$storage.request.date' placeholder='Alegeți o dată' disable-timepicker='true' required class="form-control">
+                  </quick-datepicker>
+                </label>
               </div>
 
               <div class="form-group">
@@ -230,8 +233,10 @@
               </div>
 
               <div class="form-group">
-                <label for="form-date">Data prezentei cereri:</label>
-                <input id="form-date" type="date" required class="form-control" ng-model="$storage.date">
+                <label>Data prezentei cereri:
+                <quick-datepicker id="form-date" ng-model='$storage.date' placeholder='Alegeți o dată' disable-timepicker='true' required class="form-control">
+                </quick-datepicker>
+                </label>
               </div>
 
               <div class="form-group">
@@ -339,6 +344,7 @@
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/ngstorage/ngStorage.js"></script>
+<script src="bower_components/ngQuickDate/dist/ng-quick-date.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/js/bootstrap.min.js"></script>
