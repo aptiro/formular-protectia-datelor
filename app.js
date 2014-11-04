@@ -1,15 +1,22 @@
 (function () {
     'use strict';
 
-    angular.module('dataProtection', [])
-        .controller('DataProtectionFormController', ['$scope', function ($scope) {
+    angular.module('dataProtection', [
+        'ngStorage'
+    ]).controller('DataProtectionFormController', function ($scope, $localStorage) {
 
-            // controller logic goe here
-            $scope.date = d3.time.day(new Date());
+        $scope.$storage = $localStorage.$default({
+            plaintiff: $localStorage.plaintiff || {},
+            representative: $localStorage.representative || {},
+            operator: $localStorage.operator || {},
+            request: $localStorage.request || {},
+            date: $localStorage.date || new Date(),
+            signature: $localStorage.signature || ''
+        });
 
-        }]);
+    });
 
-    $('.forward').click(function(evt) {
+    $('.forward').click(function (evt) {
         evt.preventDefault();
         var href = $(this).attr('href');
         $('[href="' + href + '"][role=tab]').click();
@@ -37,7 +44,7 @@
             ['Â', 'A'],
             ['Î', 'I']
         ];
-        charmap.forEach(function(pair) {
+        charmap.forEach(function (pair) {
             html = html.replace(new RegExp(pair[0], 'g'), pair[1]);
         });
 

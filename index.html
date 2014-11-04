@@ -21,14 +21,14 @@
 
         <div class="checkbox">
           <label>
-            <input type="checkbox" ng-model="raspunsNesatisfacator">
+            <input type="checkbox" ng-model="$storage.raspunsNesatisfacator">
             Confim că am trimis cerere către cel care mi-a colectat datele personale și nu am primit răspuns în 15 zile/am primit răspuns nesatisfăcător
           </label>
         </div>
 
         <div class="checkbox">
           <label>
-            <input type="checkbox" ng-model="cerereTrimisaLaOperator">
+            <input type="checkbox" ng-model="$storage.cerereTrimisaLaOperator">
             Confirm că nu am depus o cerere în instanță în acest caz
           </label>
 
@@ -37,7 +37,7 @@
           </span>
         </div>
 
-        <div ng-show="raspunsNesatisfacator && cerereTrimisaLaOperator">
+        <div ng-show="$storage.raspunsNesatisfacator && $storage.cerereTrimisaLaOperator">
 
           <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#petent" role="tab" data-toggle="tab">1. Petent</a></li>
@@ -58,28 +58,28 @@
 
               <div class="form-group">
                 <label for="form-plaintiff.name">Nume și prenume:</label>
-                <input id="form-plaintiff.name" type="text" class="form-control" ng-model="plaintiff.name" required>
+                <input id="form-plaintiff.name" type="text" class="form-control" ng-model="$storage.plaintiff.name" required>
               </div>
 
               <div class="form-group">
                 <label for="form-plaintiff.address">Domiciliu:</label>
-                <input id="form-plaintiff.address" type="text" class="form-control" ng-model="plaintiff.address" required>
+                <input id="form-plaintiff.address" type="text" class="form-control" ng-model="$storage.plaintiff.address" required>
               </div>
 
               <div class="form-group">
                 <label for="form-plaintiff.telephone">Telefon:</label>
-                <input id="form-plaintiff.telephone" type="text" class="form-control" ng-model="plaintiff.telephone" required placeholder="0742xxxxxxxx">
+                <input id="form-plaintiff.telephone" type="text" class="form-control" ng-model="$storage.plaintiff.telephone" required placeholder="0742xxxxxxxx">
               </div>
 
               <div class="form-group">
                 <label for="form-plaintiff.email">E-mail:</label>
-                <input id="form-plaintiff.email" type="email" class="form-control" ng-model="plaintiff.email">
+                <input id="form-plaintiff.email" type="email" class="form-control" ng-model="$storage.plaintiff.email">
               </div>
 
               <!-- Zona de identificare a reprezentantului, dacă se aplică -->
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" ng-model="withRepresentative">
+                  <input type="checkbox" ng-model="$storage.withRepresentative">
                   Se depune prin reprezentant
                 </label>
               </div>
@@ -89,31 +89,30 @@
                 cea a cărui drepturi au fost încălcate și care depune cererea
                 în numele petentului.
               </span>
-
-              <div ng-show="withRepresentative">
+              <div ng-show="$storage.withRepresentative">
                 <div class="form-group">
                   <label for="form-representative.name">Nume:</label>
-                  <input id="form-representative.name" type="text" class="form-control" ng-model="representative.name">
+                  <input id="form-representative.name" type="text" class="form-control" ng-model="$storage.representative.name">
                 </div>
 
                 <div class="form-group">
                   <label for="form-representative.address">Adresă:</label>
-                  <input id="form-representative.address" type="text" class="form-control" ng-model="representative.address">
+                  <input id="form-representative.address" type="text" class="form-control" ng-model="$storage.representative.address">
                 </div>
 
                 <div class="form-group">
                   <label for="form-representative.telephone">Telefon:</label>
-                  <input id="form-representative.telephone" type="text" class="form-control" ng-model="representative.telephone">
+                  <input id="form-representative.telephone" type="text" class="form-control" ng-model="$storage.representative.telephone">
                 </div>
 
                 <div class="form-group">
                   <label for="form-representative.email">Email:</label>
-                  <input id="form-representative.email" type="email" class="form-control" ng-model="representative.email">
+                  <input id="form-representative.email" type="email" class="form-control" ng-model="$storage.representative.email">
                 </div>
 
                 <div class="form-group">
                   <label for="form-representative.role">În calitate de:</label>
-                  <input id="form-representative.role" type="text" class="form-control" ng-model="representative.role">
+                  <input id="form-representative.role" type="text" class="form-control" ng-model="$storage.representative.role">
                 </div>
                   <span class="help-block">
           Nu uita să adaugi împuternicirea în original!
@@ -141,22 +140,22 @@
 
               <div class="form-group">
                 <label for="form-operator.name">Numele operatorului:</label>
-                <input id="form-operator.name" type="text" required class="form-control" ng-model="operator.name">
+                <input id="form-operator.name" type="text" required class="form-control" ng-model="$storage.operator.name">
               </div>
 
               <div class="form-group">
                 <label for="form-operator.address">Sediu:</label>
-                <input id="form-operator.address" type="text" required class="form-control" ng-model="operator.address">
+                <input id="form-operator.address" type="text" required class="form-control" ng-model="$storage.operator.address">
               </div>
 
               <div class="form-group">
                 <label for="form-operator.email">E-mail:</label>
-                <input id="form-operator.email" type="email" class="form-control" ng-model="operator.email">
+                <input id="form-operator.email" type="email" class="form-control" ng-model="$storage.operator.email">
               </div>
 
               <div class="form-group">
                 <label for="form-operator.website">Site:</label>
-                <input id="form-operator.website" type="text" class="form-control" ng-model="operator.website">
+                <input id="form-operator.website" type="text" class="form-control" ng-model="$storage.operator.website">
               </div>
 
               <p>
@@ -173,35 +172,35 @@
               <!-- Zona identificare cerere -->
               <div class="radio">
                 <label>
-                  <input type="radio" name="request.hasanswer" ng-model="request.hasanswer" ng-value="false">
+                  <input type="radio" name="request.hasanswer" ng-model="$storage.request.hasanswer" ng-value="false">
                   Nu am primit răspuns
                 </label>
               </div>
 
               <div class="radio">
                 <label>
-                  <input type="radio" name="request.hasanswer" ng-model="request.hasanswer" ng-value="true">
+                  <input type="radio" name="request.hasanswer" ng-model="$storage.request.hasanswer" ng-value="true">
                   Am primit răspuns incomplet
                 </label>
               </div>
 
               <div class="form-group">
                 <label for="form-request.date">Dată cerere către operator:</label>
-                <input id="form-request.date" type="date" required class="form-control" ng-model="request.date" placeholder="an-luna-zi">
+                <input id="form-request.date" type="date" required class="form-control" ng-model="$storage.request.date" placeholder="an-luna-zi">
               </div>
 
               <div class="form-group">
                 <label for="form-request.details">Detalii cerere:</label>
 
-                <span class="help-block" ng-if="request.hasanswer">
+                <span class="help-block" ng-if="$storage.request.hasanswer">
                   Se enumeră informațiile pe care operatorul nu le-a comunicat
                 </span>
 
-                <span class="help-block" ng-if="! request.hasanswer">
+                <span class="help-block" ng-if="! $storage.request.hasanswer">
                   Se enumeră informațiile pe care petentul le-a solicitat operatorului
                 </span>
 
-                <textarea id="form-request.details" rows="5" required class="form-control" ng-model="request.details"></textarea>
+                <textarea id="form-request.details" rows="5" required class="form-control" ng-model="$storage.request.details"></textarea>
               </div>
 
               <div class="form-group">
@@ -209,7 +208,7 @@
                 <span class="help-block" ng-if="! request.hasanswer">
                   Se enumeră alte motive legate de exercitarea dreptului de acces.
                 </span>
-                <textarea id="form-request.other" rows="5" class="form-control" ng-model="request.other"></textarea>
+                <textarea id="form-request.other" rows="5" class="form-control" ng-model="$storage.request.other"></textarea>
               </div>
 
               <p>
@@ -232,12 +231,12 @@
 
               <div class="form-group">
                 <label for="form-date">Data prezentei cereri:</label>
-                <input id="form-date" type="date" required class="form-control" ng-model="date">
+                <input id="form-date" type="date" required class="form-control" ng-model="$storage.date">
               </div>
 
               <div class="form-group">
                 <label for="form-signature">Semnătură (introduceți nume și prenume):</label>
-                <input id="form-signature" type="text" class="form-control" ng-model="signature" required>
+                <input id="form-signature" type="text" class="form-control" ng-model="$storage.signature" required>
               </div>
 
               <p>
@@ -267,40 +266,39 @@
         <p class="headline">anspdcp@dataprotection.ro</p>
 
         <p>
-          <v>{{plaintiff.name || '(nume)'}}</v> cu domiciliul/reședința în
-          <v>{{plaintiff.address || '(adresă)'}}</v>,
-          <v>{{plaintiff.telephone || '(telefon)'}}</v>,
-          <span ng-if="plaintiff.email"> <v>{{plaintiff.email}}</v>,</span>
+          <v>{{$storage.plaintiff.name || '(nume)'}}</v> cu domiciliul/reședința în
+          <v>{{$storage.plaintiff.address || '(adresă)'}}</v>,
+          <v>{{$storage.plaintiff.telephone || '(telefon)'}}</v>,
+          <span ng-if="$storage.plaintiff.email"> <v>{{$storage.plaintiff.email}}</v>,</span>
           în temeiul art. 25 din legea nr. 677/2001 pentru protecția
           persoanelor cu privire la prelucrarea datelor cu caracter personal și
           libera circulație a acestor date, vă aduc la cunoștință următoarele:
         </p>
 
         <p>
-          <v>{{operator.name || '(operator)'}}</v>, cu sediul în
-          <v>{{operator.address || '(adresă)'}}</v>,
-          <span ng-if="operator.email">email <v>{{operator.email || '(adresă)'}}</v>,</span>
-          <span ng-if="operator.website">site web <v>{{operator.website || '(adresă)'}}</v>,</span>
+          <v>{{$storage.operator.name || '(operator)'}}</v>, cu sediul în
+          <v>{{$storage.operator.address || '(adresă)'}}</v>,
+          <span ng-if="storage.operator.email">email <v>{{$storage.operator.email || '(adresă)'}}</v>,</span>
+          <span ng-if="$storage.operator.website">site web <v>{{$storage.operator.website || '(adresă)'}}</v>,</span>
           mi-a încălcat <strong>dreptul de acces</strong>, întrucât
-
-          <span ng-if="request.hasanswer">
+          <span ng-if="$storage.request.hasanswer">
             nu mi-a furnizat următoarele informații pe care i le-am solicitat
             prin scrisoarea din data de
-            <v>{{(request.date|date: 'd/M/yyyy') || '(data)'}}</v>:
-            <v>{{request.details || '(detalii)'}}</v>
+            <v>{{($storage.request.date|date: 'd/M/yyyy') || '(data)'}}</v>:
+            <v>{{$storage.request.details || '(detalii)'}}</v>
             pe care operatorul nu le-a comunicat petentului.
           </span>
 
-          <span ng-if="! request.hasanswer">
+          <span ng-if="!$storage.request.hasanswer">
             nu mi-a furnizat informațiile pe care i le-am solicitat prin
             scrisoarea din data de
-            <v>{{(request.date|date: 'd/M/yyyy') || '(data)'}}</v>:
-            <v>{{request.details || '(detalii)'}}</v>, în termenul de 15
+            <v>{{($storage.request.date|date: 'd/M/yyyy') || '(data)'}}</v>:
+            <v>{{$storage.request.details || '(detalii)'}}</v>, în termenul de 15
             zile prevăzute de art. 13 (3) din Legea nr. 677/2001.
           </span>
         </p>
 
-        <p ng-if="request.other"><v>{{request.other}}</v></p>
+        <p ng-if="$storage.request.other"><v>{{$storage.request.other}}</v></p>
 
         <p>
           Anexez copia scrisorii trimise operatorului care face dovada datei
@@ -317,18 +315,18 @@
           soluționarea acestei plângeri să nu fie făcute publice.
         </p>
 
-        <p ng-if="withRepresentative">
+        <p ng-if="$storage.withRepresentative">
           Plângerea este depusă prin reprezentant
-          <v>{{representative.name}}</v> cu domiciliul/reședința în
-          <v>{{representative.address}}</v>,
-          <v>{{representative.telephone}}</v>,
-          <span ng-if="representative.email"><v>{{representative.email}}</v>,</span>
-          în calitate de <v>{{representative.role | lowercase }}</v>
+          <v>{{$storage.representative.name}}</v> cu domiciliul/reședința în
+          <v>{{$storage.representative.address}}</v>,
+          <v>{{$storage.representative.telephone}}</v>,
+          <span ng-if="$storage.representative.email"><v>{{$storage.representative.email}}</v>,</span>
+          în calitate de <v>{{$storage.representative.role | lowercase }}</v>
         </p>
 
-        <p>Data: <v>{{(date|date: 'd/M/yyyy') || '(data)'}}</v></p>
+        <p>Data: <v>{{($storage.date|date: 'd/M/yyyy') || '(data)'}}</v></p>
 
-        <p>Semnătura: <v><i>{{signature || '(semnătura)'}}</i></v></p>
+        <p>Semnătura: <v><i>{{$storage.signature || '(semnătura)'}}</i></v></p>
       </div>
 
       <button class="btn btn-primary download-pdf">
@@ -339,7 +337,8 @@
   </div>
 </div>
 
-<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/ngstorage/ngStorage.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/js/bootstrap.min.js"></script>
