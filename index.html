@@ -12,41 +12,33 @@
 
 <body ng-controller="DataProtectionFormController">
 <div class="container" ng-if="! formType">
-  <h1>Ți s-au încălcat drepturile?</h1>
+  <h1>Online assistant/asistent digital pentru protecția datelor personale</h1>
+
+  <p>Datele noastre personale nu trebuie să fie oricând la îndemâna oricui. Există limitări pentru cei la care ajung în contact cu datele noastre. Protecția datelor personale este un drept fundamental. Lista de întrebări de mai jos te ajută să identifici ce anume vrei să soliciți operatorului de date. Apoi, dacă cererea adresată operatorului nu a funcționat, mergi la a adresa o plângere Autorității pentru Protecția Datelor (ANSPDCP).  Avem drepturi. Să le punem în aplicare :)</p>
 
   <ul class="list-unstyled">
     <li>
       <h3>Vrei să știi ce date sunt colectate despre tine?</h3>
-      <p>
-        lipsum
-      </p>
-      <p>
-        <button class="btn btn-sm btn-default" ng-click="selectFormtype('acces')">Acces</button>
-      </p>
+      <p>Dacă operatorul nu ți-a respectat dreptul de acces, intră în acest formular de plângere către Autoritate.</p>
+      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('acces')">Drept de acces</button></p>
     </li>
 
     <li>
-      <h3>q2</h3>
-      <p>
-        lipsum
-      </p>
-      <button class="btn btn-sm btn-default" ng-click="selectFormtype('subsidy')">Subvenții</button>
+      <h3>Vrei să modifici date despre tine?</h3>
+      <p>Dacă operatorul nu ți-a respectat dreptul de intervenție, intră în acest formular de plângere către Autoritate.</p>
+      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('subsidy')">Drept de intervenție</button></p>
     </li>
 
     <li>
-      <h3>q3</h3>
-      <p>
-        lipsum
-      </p>
-      <button class="btn btn-sm btn-default" ng-click="selectFormtype('opposition')">Opoziție</button>
+      <h3>Vrei să ți se șteargp datele personale?</h3>
+      <p>Dacă operatorul nu ți-a respectat dreptul de acces, intră în acest formular de plângere către Autoritate.</p>
+      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('opposition')">Drept de opoziție</button></p>
     </li>
 
     <li>
-      <h3>q4</h3>
-      <p>
-        lipsum
-      </p>
-      <button class="btn btn-sm btn-default" ng-click="selectFormtype('others')">Altele</button>
+      <h3>Alte cazuri când nu ți s-au încălcat drepturile?</h3>
+      <p>Pentru orice alte nereguli, intră în acest formular de plângere către Autoritate.</p>
+      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('others')">Altele</button></p>
     </li>
   </ul>
 </div>
