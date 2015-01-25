@@ -294,7 +294,14 @@
       </form>
     </div>
 
-    <div id="preview" class="col-md-7" ng-include="'complaint.html'">
+    <div id="preview" class="col-md-7">
+      <div id="document" ng-include="'complaint.html'">
+      </div>
+
+      <button class="btn btn-primary download-pdf">
+        <i class="fa fa-download"></i>
+        Download PDF
+      </button>
     </div>
   </div>
 </div>
