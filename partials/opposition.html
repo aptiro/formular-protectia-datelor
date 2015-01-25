@@ -7,23 +7,17 @@
   <span ng-if="$storage.operator.website">site web <v>{{$storage.operator.website || '(adresă)'}}</v>,</span>
 
   mi-a încălcat <strong>dreptul la opziție</strong>,
+</p>
 
-  <span id="opozitie-optiunea-1">
-  întrucât nu a încetat prelucrarea datelor mele personale <span><strong>se enumeră datele respective</strong></span>,
-    cu toate că am făcut dovada legitimității motivelor pe care mi-am întemeiat cererea, după cum urmează:
-  <span><strong>....</strong></span>
-  </span>
+<p ng-if="$storage.request.oppositionViolation == 'stop'">
+  <span>
+  întrucât nu a încetat prelucrarea datelor mele personale
+  <v>{{$storage.request.dataDescription || '(descriere date)'}}</v>
+  în următorul fel:
+  <v>{{$storage.request.objection || '(motive de nemulțumire)'}}</v>
+</p>
 
-  <span id="opozitie-optiunea-2">
-    cu toate că mi-am exprimat opțiunea de a nu primi informații în scop de marketing direct, conform
-    <span><strong>se menționeaza actul doveditor</strong></span>
-  </span>
-  <span id="opozitie-optiunea-3">
-    nu mi-a răspuns în termen de 15 zile prevăzut de art. 15 alin. (3) din Legea nr. 677/2001.
-  </span>
-
-  <span id="alte-motive">
-    ...... <strong>(alte motive de exercitarea a dreptului de opoziție)</strong>
-  </span>
-
+<p ng-if="$storage.request.oppositionViolation == 'answer'">
+  nu mi-a răspuns în termen de 15 zile prevăzut de art. 15 alin. (3)
+  din Legea nr. 677/2001.
 </p>
