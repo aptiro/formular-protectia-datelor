@@ -28,8 +28,8 @@
       <h3>Dreptul de acces înseamnă că...</h3>
       <p>Vrei să întrebi operatorul dacă prelucrează sau nu date despre tine, vrei să știi ce date sunt colectate (+ o copie a datelor într-un format inteligibil), în ce condiții și cine are acces la ele.</p>
       <p>
-        <button class="btn btn-sm btn-default" ng-click="selectFormtype('acces')">Cerere către operator pentru dreptul de acces</button>
-        <button class="btn btn-sm btn-default" ng-click="selectFormtype('acces')">Model de plângere drept de acces</button>
+        <button class="btn btn-sm btn-default" ng-click="selectFormtype('access')">Cerere către operator pentru dreptul de acces</button>
+        <button class="btn btn-sm btn-default" ng-click="selectFormtype('access')">Model de plângere drept de acces</button>
       </p>
     </li>
 
@@ -314,7 +314,7 @@
     </div>
 
     <div id="preview" class="col-md-7">
-      <div id="document" ng-include="'complaint.html'">
+      <div id="document" ng-include="'partials/complaint.html'">
       </div>
 
       <button class="btn btn-primary download-pdf" ng-click="downloadPdf($event)">

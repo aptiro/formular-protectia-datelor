@@ -17,29 +17,11 @@
   libera circulație a acestor date, vă aduc la cunoștință următoarele:
 </p>
 
-<p>
-  <v>{{$storage.operator.name || '(operator)'}}</v>
-  , cu sediul în
-  <v>{{$storage.operator.address || '(adresă)'}}</v>
-  ,
-  <span ng-if="storage.operator.email">email <v>{{$storage.operator.email || '(adresă)'}}</v>,</span>
-  <span ng-if="$storage.operator.website">site web <v>{{$storage.operator.website || '(adresă)'}}</v>,</span>
-  mi-a încălcat <strong>dreptul de acces</strong>, întrucât
-          <span ng-if="$storage.request.hasanswer">
-            nu mi-a furnizat următoarele informații pe care i le-am solicitat
-            prin scrisoarea din data de
-            <v>{{($storage.request.date|date: 'd/M/yyyy') || '(data)'}}</v>:
-            <v>{{$storage.request.details || '(detalii)'}}</v>
-          </span>
 
-          <span ng-if="!$storage.request.hasanswer">
-            nu mi-a furnizat informațiile pe care i le-am solicitat prin
-            scrisoarea din data de
-            <v>{{($storage.request.date|date: 'd/M/yyyy') || '(data)'}}</v>:
-            <v>{{$storage.request.details || '(detalii)'}}</v>, în termenul de 15
-            zile prevăzute de art. 13 (3) din Legea nr. 677/2001.
-          </span>
-</p>
+<div ng-if="formType == 'access' " ng-include="'partials/access.html'"></div>
+<div ng-if="formType == 'intervention' " ng-include="'partials/intervention.html'"></div>
+<div ng-if="formType == 'opposition' " ng-include="'partials/opposition.html'"></div>
+<div ng-if="formType == 'others' " ng-include="'partials/others.html'"></div>
 
 <p ng-if="$storage.request.other">
   <v>{{$storage.request.other}}</v>

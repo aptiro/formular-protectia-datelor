@@ -1,0 +1,23 @@
+<p>
+  <v>{{$storage.operator.name || '(operator)'}}</v>
+  , cu sediul în
+  <v>{{$storage.operator.address || '(adresă)'}}</v>
+  ,
+  <span ng-if="storage.operator.email">email <v>{{$storage.operator.email || '(adresă)'}}</v>,</span>
+  <span ng-if="$storage.operator.website">site web <v>{{$storage.operator.website || '(adresă)'}}</v>,</span>
+  mi-a încălcat <strong>dreptul de acces</strong>, întrucât
+          <span ng-if="$storage.request.hasanswer">
+            nu mi-a furnizat următoarele informații pe care i le-am solicitat
+            prin scrisoarea din data de
+            <v>{{($storage.request.date|date: 'd/M/yyyy') || '(data)'}}</v>:
+            <v>{{$storage.request.details || '(detalii)'}}</v>
+          </span>
+
+          <span ng-if="!$storage.request.hasanswer">
+            nu mi-a furnizat informațiile pe care i le-am solicitat prin
+            scrisoarea din data de
+            <v>{{($storage.request.date|date: 'd/M/yyyy') || '(data)'}}</v>:
+            <v>{{$storage.request.details || '(detalii)'}}</v>, în termenul de 15
+            zile prevăzute de art. 13 (3) din Legea nr. 677/2001.
+          </span>
+</p>
