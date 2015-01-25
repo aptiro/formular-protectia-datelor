@@ -1,0 +1,239 @@
+<div class="checkbox">
+  <label>
+    <input type="checkbox" ng-model="$storage.raspunsNesatisfacator">
+    Confirm că am trimis cerere către cel care mi-a colectat datele personale și nu am primit răspuns în 15 zile/am primit răspuns nesatisfăcător
+  </label>
+</div>
+
+<div class="checkbox">
+  <label>
+    <input type="checkbox" ng-model="$storage.cerereTrimisaLaOperator">
+    Confirm că nu am depus o cerere în instanță în acest caz
+  </label>
+
+  <span class="help-block">
+   Bifarea acestor 2 opțiuni este obligatorie dacă vreți să depuneți o cerere admisibilă
+  </span>
+</div>
+
+<div ng-show="$storage.raspunsNesatisfacator && $storage.cerereTrimisaLaOperator">
+
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#petent" role="tab" data-toggle="tab">1. Petent</a></li>
+    <li role="presentation"><a href="#operator" role="tab" data-toggle="tab">2. Operator</a></li>
+    <li role="presentation"><a href="#cerere" role="tab" data-toggle="tab">3. Cerere</a></li>
+    <li role="presentation"><a href="#finaize" role="tab" data-toggle="tab">4. Final</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="petent">
+
+      <!-- Zona identificare petent -->
+      <span class="help-block">
+        <strong>Petentul</strong> este persoana care depune cererea și
+        a cărui drepturi cu privire la datele personale au fost
+        încălcate.
+      </span>
+
+      <div class="form-group">
+        <label for="form-plaintiff.name">Nume și prenume:</label>
+        <input id="form-plaintiff.name" type="text" class="form-control" ng-model="$storage.plaintiff.name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="form-plaintiff.address">Domiciliu:</label>
+        <input id="form-plaintiff.address" type="text" class="form-control" ng-model="$storage.plaintiff.address" required>
+      </div>
+
+      <div class="form-group">
+        <label for="form-plaintiff.telephone">Telefon:</label>
+        <input id="form-plaintiff.telephone" type="text" class="form-control" ng-model="$storage.plaintiff.telephone" required placeholder="0742xxxxxxxx">
+      </div>
+
+      <div class="form-group">
+        <label for="form-plaintiff.email">E-mail:</label>
+        <input id="form-plaintiff.email" type="email" class="form-control" ng-model="$storage.plaintiff.email">
+      </div>
+
+      <!-- Zona de identificare a reprezentantului, dacă se aplică -->
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="$storage.withRepresentative">
+          Se depune prin reprezentant
+        </label>
+      </div>
+
+      <span class="help-block">
+        <strong>Reprezentantul</strong> este un o altă persoană decât
+        cea a cărui drepturi au fost încălcate și care depune cererea
+        în numele petentului.
+      </span>
+      <div ng-show="$storage.withRepresentative">
+        <div class="form-group">
+          <label for="form-representative.name">Nume:</label>
+          <input id="form-representative.name" type="text" class="form-control" ng-model="$storage.representative.name">
+        </div>
+
+        <div class="form-group">
+          <label for="form-representative.address">Adresă:</label>
+          <input id="form-representative.address" type="text" class="form-control" ng-model="$storage.representative.address">
+        </div>
+
+        <div class="form-group">
+          <label for="form-representative.telephone">Telefon:</label>
+          <input id="form-representative.telephone" type="text" class="form-control" ng-model="$storage.representative.telephone">
+        </div>
+
+        <div class="form-group">
+          <label for="form-representative.email">Email:</label>
+          <input id="form-representative.email" type="email" class="form-control" ng-model="$storage.representative.email">
+        </div>
+
+        <div class="form-group">
+          <label for="form-representative.role">În calitate de:</label>
+          <input id="form-representative.role" type="text" class="form-control" ng-model="$storage.representative.role">
+        </div>
+          <span class="help-block">
+  Nu uita să adaugi împuternicirea în original!
+  </span>
+
+
+      </div>
+
+      <p>
+        <a href="#operator" class="forward" ng-click="goForward($event)">
+          pasul următor
+          <i class="fa fa-forward"></i>
+        </a>
+      </p>
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="operator">
+
+      <!-- Zona de identificare a operatorului -->
+      <span class="help-block">
+        <strong>Operatorul</strong> este persoana fizică sau juridică
+        care ți-a colectat sau folosit datele persoanel în mod ilegal.
+      </span>
+
+      <div class="form-group">
+        <label for="form-operator.name">Numele operatorului:</label>
+        <input id="form-operator.name" type="text" required class="form-control" ng-model="$storage.operator.name">
+      </div>
+
+      <div class="form-group">
+        <label for="form-operator.address">Sediu:</label>
+        <input id="form-operator.address" type="text" required class="form-control" ng-model="$storage.operator.address">
+      </div>
+
+      <div class="form-group">
+        <label for="form-operator.email">E-mail:</label>
+        <input id="form-operator.email" type="email" class="form-control" ng-model="$storage.operator.email">
+      </div>
+
+      <div class="form-group">
+        <label for="form-operator.website">Site:</label>
+        <input id="form-operator.website" type="text" class="form-control" ng-model="$storage.operator.website">
+      </div>
+
+      <p>
+        <a href="#cerere" class="forward" ng-click="goForward($event)">
+          pasul următor
+          <i class="fa fa-forward"></i>
+        </a>
+      </p>
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="cerere">
+
+      <!-- Zona identificare cerere -->
+      <div class="radio">
+        <label>
+          <input type="radio" name="request.hasanswer" ng-model="$storage.request.hasanswer" ng-value="false">
+          Nu am primit răspuns
+        </label>
+      </div>
+
+      <div class="radio">
+        <label>
+          <input type="radio" name="request.hasanswer" ng-model="$storage.request.hasanswer" ng-value="true">
+          Am primit răspuns incomplet
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>Dată cerere către operator:
+        <quick-datepicker ng-model='$storage.request.date' placeholder='Alegeți o dată' disable-timepicker='true' required class="form-control">
+          </quick-datepicker>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="form-request.details">Detalii cerere:</label>
+
+        <span class="help-block" ng-if="$storage.request.hasanswer">
+          Se enumeră informațiile pe care operatorul nu le-a comunicat
+        </span>
+
+        <span class="help-block" ng-if="! $storage.request.hasanswer">
+          Se enumeră informațiile pe care petentul le-a solicitat operatorului
+        </span>
+
+        <textarea id="form-request.details" rows="5" required class="form-control" ng-model="$storage.request.details"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="form-request.other">Alte motive:</label>
+        <span class="help-block" ng-if="! request.hasanswer">
+          Se enumeră alte motive legate de exercitarea dreptului de acces.
+        </span>
+        <textarea id="form-request.other" rows="5" class="form-control" ng-model="$storage.request.other"></textarea>
+      </div>
+
+      <p>
+        <a href="#finaize" class="forward" ng-click="goForward($event)">
+          pasul următor
+          <i class="fa fa-forward"></i>
+        </a>
+      </p>
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="finaize">
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="private">
+          Vreau ca datele mele personale să nu fie făcute publice
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>Data prezentei cereri:
+        <quick-datepicker id="form-date" ng-model='$storage.date' placeholder='Alegeți o dată' disable-timepicker='true' required class="form-control">
+        </quick-datepicker>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="form-signature">Semnătură (introduceți nume și prenume):</label>
+        <input id="form-signature" type="text" class="form-control" ng-model="$storage.signature" required>
+      </div>
+
+      <p>
+        <strong>Nu uita să depui și anexele, inclusiv copia după
+        cererea către operator!</strong>
+      </p>
+
+     <div class="form-group">
+       <button type="submit" class="btn btn-primary">
+         <i class="fa fa-download"></i>
+         Download PDF
+       </button>
+     </div>
+
+    </div>
+  </div>
+</div>
