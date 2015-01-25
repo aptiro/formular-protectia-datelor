@@ -1,1 +1,24 @@
-others
+<!-- Zona identificare cerere -->
+<div class="form-group">
+  <label for="form-request.story">Descrierea situației</label>
+  <textarea id="form-request.story" rows="5" class="form-control" ng-model="$storage.request.story"></textarea>
+</div>
+
+<div class="form-group">
+  <label>Dată cerere către operator
+  <quick-datepicker ng-model='$storage.request.date' placeholder='Alegeți o dată' disable-timepicker='true' required class="form-control">
+    </quick-datepicker>
+  </label>
+</div>
+
+<div class="form-group">
+  <label for="form-request.annex">Documente anexate</label>
+  <textarea id="form-request.annex" rows="5" class="form-control" ng-model="$storage.request.annex"></textarea>
+</div>
+
+<p>
+  <a href="#finaize" class="forward" ng-click="goForward($event)">
+    pasul următor
+    <i class="fa fa-forward"></i>
+  </a>
+</p>
