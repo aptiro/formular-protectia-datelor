@@ -14,31 +14,42 @@
 <div class="container" ng-if="! formType">
   <h1>Online assistant/asistent digital pentru protecția datelor personale</h1>
 
-  <p>Datele noastre personale nu trebuie să fie oricând la îndemâna oricui. Există limitări pentru cei la care ajung în contact cu datele noastre. Protecția datelor personale este un drept fundamental. Lista de întrebări de mai jos te ajută să identifici ce anume vrei să soliciți operatorului de date. Apoi, dacă cererea adresată operatorului nu a funcționat, mergi la a adresa o plângere Autorității pentru Protecția Datelor (ANSPDCP).  Avem drepturi. Să le punem în aplicare :)</p>
+  <p>Datele personale nu trebuie să fie oricând la îndemâna oricui. Există limitări pentru cei care ajung în contact cu datele noastre. Protecția datelor personale este un drept fundamental, așa că dacă ți s-au încălcat drepturile sau vrei să semnalezi nereguli, poți folosi această pagină care te ghidează prin pași. 
+  #1 Încerci să identifici tipul de drept pe care vrei să-l exerciți. Ai o bănuială sau ai citit în Legea 677/2001 cam care sunt? Poate te ajută întrebările de mai jos. 
+  #2 Contactezi operatorul. Prima oară cu el discuți. Întotdeauna. Urmând pașii din meniu, (în curând o să) găsești și sugestii de modele de cerere către operator.
+  #3 Faci plângere la Autoritatea pentru Protecția Datelor (ANSPDCP). Dacă nu s-a rezolvat problema pentru care i-ai scris operatorului, ai opțiunea să te adresezi Autorității, iar aceasta va face investigații.
+  
+  Avem legi, avem drepturi. Să le punem în aplicare :)
+  
+  P.S. O cerere către operator nu are o formă legală, bătută în cuie. Cererile de mai jos sunt niște sugestii orientative, dar sunt revizuite de juriști. Deci nu ar trebui să dai greș cu ele. În schimb, modelele de plângere către ANSPDCP sunt modele standard, aprobate de Autoritate. La sfârșit, cererea și/sau plângerea nu se va trimite automat. O downloadezi și o trimiți pe mail. Am evitat să facem un sistem prin care acestea să se trimită direct tocmai pentru a proteja datele cu caracter personal. Toate informațiile pe care le introduci se salvează doar local, la tine pe calculator. Nu uita să anexezi și celelalte documente atunci când e cazul (împuternicire, cererea trimisă operatorului, răspunsul primit de la operator etc).</p>
 
   <ul class="list-unstyled">
     <li>
-      <h3>Vrei să știi ce date sunt colectate despre tine?</h3>
-      <p>Dacă operatorul nu ți-a respectat dreptul de acces, intră în acest formular de plângere către Autoritate.</p>
-      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('acces')">Drept de acces</button></p>
+      <h3>Dreptul de acces înseamnă că...</h3>
+      <p>Vrei să întrebi operatorul dacă prelucrează sau nu date despre tine, vrei să știi ce date sunt colectate (+ o copie a datelor într-un format inteligibil), în ce condiții și cine are acces la ele.</p>
+      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('acces')">Cerere către operator pentru dreptul de acces</button></p>
+      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('acces')">Model de plângere drept de acces</button></p>
     </li>
 
     <li>
-      <h3>Vrei să modifici date despre tine?</h3>
-      <p>Dacă operatorul nu ți-a respectat dreptul de intervenție, intră în acest formular de plângere către Autoritate.</p>
-      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('subsidy')">Drept de intervenție</button></p>
+      <h3>Dreptul de intervenție înseamnă că..</h3>
+      <p>Vrei ca operatorul să corecteze, actualizeze, blocheze sau să șteargă date personale. Pe unele e obligat să le transforme în date anonime.</p>
+      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('subsidy')">Cerere către operator pentru dreptul de intervenție</button></p>
+      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('acces')">Model de plângere drept de intervenție</button></p>
     </li>
 
     <li>
-      <h3>Vrei să ți se șteargp datele personale?</h3>
-      <p>Dacă operatorul nu ți-a respectat dreptul de acces, intră în acest formular de plângere către Autoritate.</p>
-      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('opposition')">Drept de opoziție</button></p>
+      <h3>Dreptul de opoziție înseamnă că...</h3>
+      <p>Datele tale nu aveau din start ce să caute la operator (nu ți-ai dat consimțământul, nu are temei justificat de prelucrare etc), așa că nu vrei să le mai prelucreze. Nu vrei să mai primești newslettere, oferte, sms-uri promoționale etc. Nu este doar enervant, este și ilegal.</p>
+      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('opposition')">Cerere către operator pentru dreptul de opoziție</button></p>
+      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('acces')">Model de plângere drept de opoziție</button></p>
     </li>
 
     <li>
-      <h3>Alte cazuri când nu ți s-au încălcat drepturile?</h3>
-      <p>Pentru orice alte nereguli, intră în acest formular de plângere către Autoritate.</p>
-      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('others')">Altele</button></p>
+      <h3>Alte cazuri când ți s-au încălcat drepturile?</h3>
+      <p>Pentru orice alte nereguli, neacoperite de situațiile de mai sus, ai modelele mai jos.</p>
+      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('others')">Cerere către operator pentru alte situații</button></p>
+      <p><button class="btn btn-sm btn-default" ng-click="selectFormtype('acces')">Model de plângere pentru alte situații</button></p>
     </li>
   </ul>
 </div>
@@ -50,7 +61,7 @@
 
     <div class="col-md-5">
 
-      <form ng-submit="onSubmit()">
+      <form>
 
         <div class="checkbox">
           <label>
@@ -155,7 +166,7 @@
               </div>
 
               <p>
-                <a href="#operator" class="forward" ng-click="goForward($event)">
+                <a href="#operator" class="forward">
                   pasul următor
                   <i class="fa fa-forward"></i>
                 </a>
@@ -192,7 +203,7 @@
               </div>
 
               <p>
-                <a href="#cerere" class="forward" ng-click="goForward($event)">
+                <a href="#cerere" class="forward">
                   pasul următor
                   <i class="fa fa-forward"></i>
                 </a>
@@ -247,7 +258,7 @@
               </div>
 
               <p>
-                <a href="#finaize" class="forward" ng-click="goForward($event)">
+                <a href="#finaize" class="forward">
                   pasul următor
                   <i class="fa fa-forward"></i>
                 </a>
@@ -295,10 +306,78 @@
     </div>
 
     <div id="preview" class="col-md-7">
-      <div id="document" ng-include="'complaint.html'">
+      <div id="document">
+        <p class="headline">Către</p>
+        <p class="headline">AUTORITATEA NAȚIONALĂ DE SUPRAVEGHERE</p>
+        <p class="headline">A PRELUCRĂRII DATELOR CU CARACTER PERSONAL</p>
+        <p class="headline">B-dul G-ral Gh. Magheru nr. 28-31 sector 1 București</p>
+        <p class="headline">anspdcp@dataprotection.ro</p>
+
+        <p>
+          <v>{{$storage.plaintiff.name || '(nume)'}}</v> cu domiciliul/reședința în
+          <v>{{$storage.plaintiff.address || '(adresă)'}}</v>,
+          <v>{{$storage.plaintiff.telephone || '(telefon)'}}</v>,
+          <span ng-if="$storage.plaintiff.email"> <v>{{$storage.plaintiff.email}}</v>,</span>
+          în temeiul art. 25 din legea nr. 677/2001 pentru protecția
+          persoanelor cu privire la prelucrarea datelor cu caracter personal și
+          libera circulație a acestor date, vă aduc la cunoștință următoarele:
+        </p>
+
+        <p>
+          <v>{{$storage.operator.name || '(operator)'}}</v>, cu sediul în
+          <v>{{$storage.operator.address || '(adresă)'}}</v>,
+          <span ng-if="storage.operator.email">email <v>{{$storage.operator.email || '(adresă)'}}</v>,</span>
+          <span ng-if="$storage.operator.website">site web <v>{{$storage.operator.website || '(adresă)'}}</v>,</span>
+          mi-a încălcat <strong>dreptul de acces</strong>, întrucât
+          <span ng-if="$storage.request.hasanswer">
+            nu mi-a furnizat următoarele informații pe care i le-am solicitat
+            prin scrisoarea din data de
+            <v>{{($storage.request.date|date: 'd/M/yyyy') || '(data)'}}</v>:
+            <v>{{$storage.request.details || '(detalii)'}}</v>
+            pe care operatorul nu le-a comunicat petentului.
+          </span>
+
+          <span ng-if="!$storage.request.hasanswer">
+            nu mi-a furnizat informațiile pe care i le-am solicitat prin
+            scrisoarea din data de
+            <v>{{($storage.request.date|date: 'd/M/yyyy') || '(data)'}}</v>:
+            <v>{{$storage.request.details || '(detalii)'}}</v>, în termenul de 15
+            zile prevăzute de art. 13 (3) din Legea nr. 677/2001.
+          </span>
+        </p>
+
+        <p ng-if="$storage.request.other"><v>{{$storage.request.other}}</v></p>
+
+        <p>
+          Anexez copia scrisorii trimise operatorului care face dovada datei
+          la care m-am adresat acestuia.
+        </p>
+
+        <p>
+          Față de cele de mai sus, vă rog să dispuneți măsurile legale pentru a
+          primi informațiile solicitate în baza Legii nr. 677/2001.
+        </p>
+
+        <p ng-if="private">
+          Doresc ca demersurile efectuate în legătură cu
+          soluționarea acestei plângeri să nu fie făcute publice.
+        </p>
+
+        <p ng-if="$storage.withRepresentative">
+          Plângerea este depusă prin reprezentant
+          <v>{{$storage.representative.name}}</v> cu domiciliul/reședința în
+          <v>{{$storage.representative.address}}</v>,
+          <v>{{$storage.representative.telephone}}</v>,
+          <span ng-if="$storage.representative.email"><v>{{$storage.representative.email}}</v>,</span>
+          în calitate de <v>{{$storage.representative.role | lowercase }}</v>
+        </p>
+
+        <p>Data: <v>{{($storage.date|date: 'd/M/yyyy') || '(data)'}}</v></p>
+
+        <p>Semnătura: <v><i>{{$storage.signature || '(semnătura)'}}</i></v></p>
       </div>
 
-      <button class="btn btn-primary download-pdf" ng-click="downloadPdf($event)">
+      <button class="btn btn-primary download-pdf">
         <i class="fa fa-download"></i>
         Download PDF
       </button>
