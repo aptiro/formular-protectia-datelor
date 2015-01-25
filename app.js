@@ -21,49 +21,47 @@
             $scope.formType = name;
         };
 
-    });
+        $scope.goForward = function(evt) {
+            evt.preventDefault();
+            var href = $(evt.target).attr('href');
+            $('[href="' + href + '"][role=tab]').click();
+        };
 
-    $('.forward').click(function (evt) {
-        evt.preventDefault();
-        var href = $(this).attr('href');
-        $('[href="' + href + '"][role=tab]').click();
-    });
+        $scope.downloadPdf = function(evt) {
+            setTimeout(function() { $('button[type=submit]').click() }, 0);
+        };
 
-    $('.download-pdf').click(function (evt) {
-        $('form').submit();
-    });
+        $scope.onSubmit = function() {
+            var doc = new jsPDF();
 
-    $('form').submit(function (evt) {
-        evt.preventDefault();
+            var html = $('#document').html();
+            var charmap = [
+                ['ș', 's'],
+                ['ț', 't'],
+                ['ă', 'a'],
+                ['â', 'a'],
+                ['î', 'i'],
+                ['Ș', 'S'],
+                ['Ț', 'T'],
+                ['Ă', 'A'],
+                ['Â', 'A'],
+                ['Î', 'I']
+            ];
+            charmap.forEach(function (pair) {
+                html = html.replace(new RegExp(pair[0], 'g'), pair[1]);
+            });
 
-        var doc = new jsPDF();
-
-        var html = $('#document').html();
-        var charmap = [
-            ['ș', 's'],
-            ['ț', 't'],
-            ['ă', 'a'],
-            ['â', 'a'],
-            ['î', 'i'],
-            ['Ș', 'S'],
-            ['Ț', 'T'],
-            ['Ă', 'A'],
-            ['Â', 'A'],
-            ['Î', 'I']
-        ];
-        charmap.forEach(function (pair) {
-            html = html.replace(new RegExp(pair[0], 'g'), pair[1]);
-        });
-
-        doc.fromHTML(html, 15, 15, {
-            'width': 170,
-            'elementHandlers': {
-                '#editor': function (element, renderer) {
-                    return true;
+            doc.fromHTML(html, 15, 15, {
+                'width': 170,
+                'elementHandlers': {
+                    '#editor': function (element, renderer) {
+                        return true;
+                    }
                 }
-            }
-        });
-        doc.save('document.pdf');
+            });
+            doc.save('document.pdf');
+        };
+
     });
 
 })();

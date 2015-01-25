@@ -50,7 +50,7 @@
 
     <div class="col-md-5">
 
-      <form>
+      <form ng-submit="onSubmit()">
 
         <div class="checkbox">
           <label>
@@ -155,7 +155,7 @@
               </div>
 
               <p>
-                <a href="#operator" class="forward">
+                <a href="#operator" class="forward" ng-click="goForward($event)">
                   pasul următor
                   <i class="fa fa-forward"></i>
                 </a>
@@ -192,7 +192,7 @@
               </div>
 
               <p>
-                <a href="#cerere" class="forward">
+                <a href="#cerere" class="forward" ng-click="goForward($event)">
                   pasul următor
                   <i class="fa fa-forward"></i>
                 </a>
@@ -247,7 +247,7 @@
               </div>
 
               <p>
-                <a href="#finaize" class="forward">
+                <a href="#finaize" class="forward" ng-click="goForward($event)">
                   pasul următor
                   <i class="fa fa-forward"></i>
                 </a>
@@ -298,7 +298,7 @@
       <div id="document" ng-include="'complaint.html'">
       </div>
 
-      <button class="btn btn-primary download-pdf">
+      <button class="btn btn-primary download-pdf" ng-click="downloadPdf($event)">
         <i class="fa fa-download"></i>
         Download PDF
       </button>
