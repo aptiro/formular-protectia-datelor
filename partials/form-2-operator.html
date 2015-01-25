@@ -1,0 +1,32 @@
+<!-- Zona de identificare a operatorului -->
+<span class="help-block">
+  <strong>Operatorul</strong> este persoana fizică sau juridică
+  care ți-a colectat sau folosit datele persoanel în mod ilegal.
+</span>
+
+<div class="form-group">
+  <label for="form-operator.name">Numele operatorului:</label>
+  <input id="form-operator.name" type="text" required class="form-control" ng-model="$storage.operator.name">
+</div>
+
+<div class="form-group">
+  <label for="form-operator.address">Sediu:</label>
+  <input id="form-operator.address" type="text" required class="form-control" ng-model="$storage.operator.address">
+</div>
+
+<div class="form-group">
+  <label for="form-operator.email">E-mail:</label>
+  <input id="form-operator.email" type="email" class="form-control" ng-model="$storage.operator.email">
+</div>
+
+<div class="form-group">
+  <label for="form-operator.website">Site:</label>
+  <input id="form-operator.website" type="text" class="form-control" ng-model="$storage.operator.website">
+</div>
+
+<p>
+  <a href="#cerere" class="forward" ng-click="goForward($event)">
+    pasul următor
+    <i class="fa fa-forward"></i>
+  </a>
+</p>

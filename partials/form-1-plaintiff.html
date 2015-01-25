@@ -1,0 +1,78 @@
+<!-- Zona identificare petent -->
+<span class="help-block">
+  <strong>Petentul</strong> este persoana care depune cererea și
+  a cărui drepturi cu privire la datele personale au fost
+  încălcate.
+</span>
+
+<div class="form-group">
+  <label for="form-plaintiff.name">Nume și prenume:</label>
+  <input id="form-plaintiff.name" type="text" class="form-control" ng-model="$storage.plaintiff.name" required>
+</div>
+
+<div class="form-group">
+  <label for="form-plaintiff.address">Domiciliu:</label>
+  <input id="form-plaintiff.address" type="text" class="form-control" ng-model="$storage.plaintiff.address" required>
+</div>
+
+<div class="form-group">
+  <label for="form-plaintiff.telephone">Telefon:</label>
+  <input id="form-plaintiff.telephone" type="text" class="form-control" ng-model="$storage.plaintiff.telephone" required placeholder="0742xxxxxxxx">
+</div>
+
+<div class="form-group">
+  <label for="form-plaintiff.email">E-mail:</label>
+  <input id="form-plaintiff.email" type="email" class="form-control" ng-model="$storage.plaintiff.email">
+</div>
+
+<!-- Zona de identificare a reprezentantului, dacă se aplică -->
+<div class="checkbox">
+  <label>
+    <input type="checkbox" ng-model="$storage.withRepresentative">
+    Se depune prin reprezentant
+  </label>
+</div>
+
+<span class="help-block">
+  <strong>Reprezentantul</strong> este un o altă persoană decât
+  cea a cărui drepturi au fost încălcate și care depune cererea
+  în numele petentului.
+</span>
+<div ng-show="$storage.withRepresentative">
+  <div class="form-group">
+    <label for="form-representative.name">Nume:</label>
+    <input id="form-representative.name" type="text" class="form-control" ng-model="$storage.representative.name">
+  </div>
+
+  <div class="form-group">
+    <label for="form-representative.address">Adresă:</label>
+    <input id="form-representative.address" type="text" class="form-control" ng-model="$storage.representative.address">
+  </div>
+
+  <div class="form-group">
+    <label for="form-representative.telephone">Telefon:</label>
+    <input id="form-representative.telephone" type="text" class="form-control" ng-model="$storage.representative.telephone">
+  </div>
+
+  <div class="form-group">
+    <label for="form-representative.email">Email:</label>
+    <input id="form-representative.email" type="email" class="form-control" ng-model="$storage.representative.email">
+  </div>
+
+  <div class="form-group">
+    <label for="form-representative.role">În calitate de:</label>
+    <input id="form-representative.role" type="text" class="form-control" ng-model="$storage.representative.role">
+  </div>
+    <span class="help-block">
+Nu uita să adaugi împuternicirea în original!
+</span>
+
+
+</div>
+
+<p>
+  <a href="#operator" class="forward" ng-click="goForward($event)">
+    pasul următor
+    <i class="fa fa-forward"></i>
+  </a>
+</p>

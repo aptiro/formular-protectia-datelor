@@ -1,0 +1,50 @@
+<!-- Zona identificare cerere -->
+<div class="radio">
+  <label>
+    <input type="radio" name="request.hasanswer" ng-model="$storage.request.hasanswer" ng-value="false">
+    Nu am primit răspuns
+  </label>
+</div>
+
+<div class="radio">
+  <label>
+    <input type="radio" name="request.hasanswer" ng-model="$storage.request.hasanswer" ng-value="true">
+    Am primit răspuns incomplet
+  </label>
+</div>
+
+<div class="form-group">
+  <label>Dată cerere către operator:
+  <quick-datepicker ng-model='$storage.request.date' placeholder='Alegeți o dată' disable-timepicker='true' required class="form-control">
+    </quick-datepicker>
+  </label>
+</div>
+
+<div class="form-group">
+  <label for="form-request.details">Detalii cerere:</label>
+
+  <span class="help-block" ng-if="$storage.request.hasanswer">
+    Se enumeră informațiile pe care operatorul nu le-a comunicat
+  </span>
+
+  <span class="help-block" ng-if="! $storage.request.hasanswer">
+    Se enumeră informațiile pe care petentul le-a solicitat operatorului
+  </span>
+
+  <textarea id="form-request.details" rows="5" required class="form-control" ng-model="$storage.request.details"></textarea>
+</div>
+
+<div class="form-group">
+  <label for="form-request.other">Alte motive:</label>
+  <span class="help-block" ng-if="! request.hasanswer">
+    Se enumeră alte motive legate de exercitarea dreptului de acces.
+  </span>
+  <textarea id="form-request.other" rows="5" class="form-control" ng-model="$storage.request.other"></textarea>
+</div>
+
+<p>
+  <a href="#finaize" class="forward" ng-click="goForward($event)">
+    pasul următor
+    <i class="fa fa-forward"></i>
+  </a>
+</p>
