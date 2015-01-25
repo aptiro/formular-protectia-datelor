@@ -323,7 +323,6 @@
             prin scrisoarea din data de
             <v>{{($storage.request.date|date: 'd/M/yyyy') || '(data)'}}</v>:
             <v>{{$storage.request.details || '(detalii)'}}</v>
-            pe care operatorul nu le-a comunicat petentului.
           </span>
 
           <span ng-if="!$storage.request.hasanswer">
