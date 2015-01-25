@@ -6,18 +6,19 @@
   <span ng-if="storage.operator.email">email <v>{{$storage.operator.email || '(adresă)'}}</v>,</span>
   <span ng-if="$storage.operator.website">site web <v>{{$storage.operator.website || '(adresă)'}}</v>,</span>
 
-  a <strong>prelucrat ilegal</strong>, datele mele personale <span><strong>se enumeră datele respective</strong></span>,
-  în următoarele împrejurări:
-  <span><strong>Se descrie situația considerată de petent ca fiind o încălcare a Legii nr. 677/2001</strong></span>
+  a <strong>prelucrat ilegal</strong>, datele mele personale
+  <v>{{$storage.request.dataDescription || '(descriere date)'}}</v>, în următoarele împrejurări:
+  <v>{{$storage.request.story || '(împrejurări)'}}</v>
 </p>
 <p>
   Declar pe proprie răspundere că obiectul prezentei plângeri nu face obiectul unei acțiuni în justiție.
 </p>
 <p>
-  Precizez că m-am adresat în prealabil operatorului cu scrisoarea din data de <span><strong>DATA
-  SCRISOARE</strong></span>,
-  însă nu am primit un răspuns/răspunsul primit nu îl consider satisfăcător din următoarele motive:
-  <span><strong>Se alege varianta corespunzătoare</strong></span>
+  Precizez că m-am adresat în prealabil operatorului cu scrisoarea din data de
+  <v>{{($storage.request.date|date: 'd/M/yyyy') || '(data)'}}</v>,
+  însă nu am primit un răspuns/răspunsul primit nu îl consider
+  satisfăcător din următoarele motive:
+  <v>{{$storage.request.objection || '(motive de nemulțumire)'}}</v>
 </p>
 <p>
   <strong>Trebuie să avem mențiune de atașare copie după răspuns, nu doar scrisoare !!</strong>
