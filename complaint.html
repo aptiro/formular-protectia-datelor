@@ -1,0 +1,74 @@
+<div id="document">
+  <p class="headline">Către</p>
+  <p class="headline">AUTORITATEA NAȚIONALĂ DE SUPRAVEGHERE</p>
+  <p class="headline">A PRELUCRĂRII DATELOR CU CARACTER PERSONAL</p>
+  <p class="headline">B-dul G-ral Gh. Magheru nr. 28-31 sector 1 București</p>
+  <p class="headline">anspdcp@dataprotection.ro</p>
+
+  <p>
+    <v>{{$storage.plaintiff.name || '(nume)'}}</v> cu domiciliul/reședința în
+    <v>{{$storage.plaintiff.address || '(adresă)'}}</v>,
+    <v>{{$storage.plaintiff.telephone || '(telefon)'}}</v>,
+    <span ng-if="$storage.plaintiff.email"> <v>{{$storage.plaintiff.email}}</v>,</span>
+    în temeiul art. 25 din legea nr. 677/2001 pentru protecția
+    persoanelor cu privire la prelucrarea datelor cu caracter personal și
+    libera circulație a acestor date, vă aduc la cunoștință următoarele:
+  </p>
+
+  <p>
+    <v>{{$storage.operator.name || '(operator)'}}</v>, cu sediul în
+    <v>{{$storage.operator.address || '(adresă)'}}</v>,
+    <span ng-if="storage.operator.email">email <v>{{$storage.operator.email || '(adresă)'}}</v>,</span>
+    <span ng-if="$storage.operator.website">site web <v>{{$storage.operator.website || '(adresă)'}}</v>,</span>
+    mi-a încălcat <strong>dreptul de acces</strong>, întrucât
+          <span ng-if="$storage.request.hasanswer">
+            nu mi-a furnizat următoarele informații pe care i le-am solicitat
+            prin scrisoarea din data de
+            <v>{{($storage.request.date|date: 'd/M/yyyy') || '(data)'}}</v>:
+            <v>{{$storage.request.details || '(detalii)'}}</v>
+          </span>
+
+          <span ng-if="!$storage.request.hasanswer">
+            nu mi-a furnizat informațiile pe care i le-am solicitat prin
+            scrisoarea din data de
+            <v>{{($storage.request.date|date: 'd/M/yyyy') || '(data)'}}</v>:
+            <v>{{$storage.request.details || '(detalii)'}}</v>, în termenul de 15
+            zile prevăzute de art. 13 (3) din Legea nr. 677/2001.
+          </span>
+  </p>
+
+  <p ng-if="$storage.request.other"><v>{{$storage.request.other}}</v></p>
+
+  <p>
+    Anexez copia scrisorii trimise operatorului care face dovada datei
+    la care m-am adresat acestuia.
+  </p>
+
+  <p>
+    Față de cele de mai sus, vă rog să dispuneți măsurile legale pentru a
+    primi informațiile solicitate în baza Legii nr. 677/2001.
+  </p>
+
+  <p ng-if="private">
+    Doresc ca demersurile efectuate în legătură cu
+    soluționarea acestei plângeri să nu fie făcute publice.
+  </p>
+
+  <p ng-if="$storage.withRepresentative">
+    Plângerea este depusă prin reprezentant
+    <v>{{$storage.representative.name}}</v> cu domiciliul/reședința în
+    <v>{{$storage.representative.address}}</v>,
+    <v>{{$storage.representative.telephone}}</v>,
+    <span ng-if="$storage.representative.email"><v>{{$storage.representative.email}}</v>,</span>
+    în calitate de <v>{{$storage.representative.role | lowercase }}</v>
+  </p>
+
+  <p>Data: <v>{{($storage.date|date: 'd/M/yyyy') || '(data)'}}</v></p>
+
+  <p>Semnătura: <v><i>{{$storage.signature || '(semnătura)'}}</i></v></p>
+</div>
+
+<button class="btn btn-primary download-pdf">
+  <i class="fa fa-download"></i>
+  Download PDF
+</button>
