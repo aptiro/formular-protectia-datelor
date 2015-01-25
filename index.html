@@ -10,11 +10,51 @@
   <link rel="stylesheet" href="app.css">
 </head>
 
-<body>
-<div class="container">
+<body ng-controller="DataProtectionFormController">
+<div class="container" ng-if="! formType">
+  <h1>titlu frumos</h1>
+
+  <ul class="list-unstyled">
+    <li>
+      <h3>Vrei să știi ce date sunt colectate despre tine?</h3>
+      <p>
+        lipsum
+      </p>
+      <p>
+        <button class="btn btn-sm btn-default" ng-click="selectFormtype('acces')">Acces</button>
+      </p>
+    </li>
+
+    <li>
+      <h3>q2</h3>
+      <p>
+        lipsum
+      </p>
+      <button class="btn btn-sm btn-default" ng-click="selectFormtype('subsidy')">Subvenții</button>
+    </li>
+
+    <li>
+      <h3>q3</h3>
+      <p>
+        lipsum
+      </p>
+      <button class="btn btn-sm btn-default" ng-click="selectFormtype('opposition')">Opoziție</button>
+    </li>
+
+    <li>
+      <h3>q4</h3>
+      <p>
+        lipsum
+      </p>
+      <button class="btn btn-sm btn-default" ng-click="selectFormtype('others')">Altele</button>
+    </li>
+  </ul>
+</div>
+
+<div class="container" ng-if="formType">
   <h1>Model de plângere către Autoritatea de Protecție a Datelor (ANSPDCP)</h1>
 
-  <div class="row" ng-controller="DataProtectionFormController">
+  <div class="row">
 
     <div class="col-md-5">
 

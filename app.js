@@ -17,6 +17,10 @@
             signature: $localStorage.signature || ''
         });
 
+        $scope.selectFormtype = function(name) {
+            $scope.formType = name;
+        };
+
     });
 
     $('.forward').click(function (evt) {
