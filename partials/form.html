@@ -28,7 +28,10 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="petent" ng-include="'partials/form-1-plaintiff.html'"></div>
     <div role="tabpanel" class="tab-pane" id="operator" ng-include="'partials/form-2-operator.html'"></div>
-    <div role="tabpanel" class="tab-pane" id="cerere" ng-include="'partials/form-3-complaint-access.html'"></div>
+    <div role="tabpanel" class="tab-pane" id="cerere" ng-include="'partials/form-3-complaint-access.html'" ng-if="formType == 'access'"></div>
+    <div role="tabpanel" class="tab-pane" id="cerere" ng-include="'partials/form-3-complaint-intervention.html'" ng-if="formType == 'intervention'"></div>
+    <div role="tabpanel" class="tab-pane" id="cerere" ng-include="'partials/form-3-complaint-opposition.html'" ng-if="formType == 'opposition'"></div>
+    <div role="tabpanel" class="tab-pane" id="cerere" ng-include="'partials/form-3-complaint-others.html'" ng-if="formType == 'others'"></div>
     <div role="tabpanel" class="tab-pane" id="finaize" ng-include="'partials/form-4-final.html'"></div>
   </div>
 </div>
