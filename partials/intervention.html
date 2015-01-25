@@ -6,26 +6,27 @@
   <span ng-if="storage.operator.email">email <v>{{$storage.operator.email || '(adresă)'}}</v>,</span>
   <span ng-if="$storage.operator.website">site web <v>{{$storage.operator.website || '(adresă)'}}</v>,</span>
   mi-a încălcat <strong>dreptul de intervenție</strong>,
+</p>
 
-  <span id="interventie-optiunea-1">
-  întrucât nu mi-a <strong>rectificat/actualizat/blocat/șters/transformat</span></strong>
-  în date anonime datele personale care mă privesc <span><strong>se enumeră datele respective</strong></span>
-  și care au fost prelucrate ilegal/au fost incomplete/inexacte.
-  </span>
+<p ng-if="$storage.request.interventionViolation == 'fail'">
+  întrucât nu mi-a
+  <v>{{$storage.request.changetype || '(tipul intervenției)'}}</v>
+  datele personale care mă privesc
+  și care au fost prelucrate
+  <v>{{$storage.request.violation || '(cum?)'}}</v>.
+</p>
 
-  <span id="interventie-optiunea-2">
-    întrucât nu a notificat terților <span><strong>se precizează care sunt aceștia, în măsura în care se cunoaște
-    identitatea lor</strong></span>
-    cărora a dezvăluit datele mele personale măsurile de rectificare/actualizare/blocare/ștergere/transformare în date anonime
-    <span><strong>se sublinază varianta corespunzătoare</strong></span> a acestor date <span>... <strong>se enumeră
-    aceste date</strong></span>
-  </span>
+<p ng-if="$storage.request.interventionViolation == 'notify'">
+  întrucât nu a notificat terților
+  <v>{{$storage.request.otherParties}}</v>
 
-  <span id="interventie-optiunea-3">
-    întrucât nu mi-a răspuns în termenul de 15 zile prevăzut la art. 14 alin. (3) din Legea nr. 677/2001.
-  </span>
-  <span id="interventie-optiunea-4">
-    ...... <strong>alte motive legate de exercitarea dreptului de intervenție</strong>
-  </span>
+  cărora a dezvăluit datele mele personale măsurile de
 
+  <v>{{$storage.request.changetype || '(tipul intervenției)'}}</v>
+
+  a acestor date <v>{{$storage.request.dataDescription}}</v>
+</p>
+
+<p ng-if="$storage.request.interventionViolation == 'answer'">
+  întrucât nu mi-a răspuns în termenul de 15 zile prevăzut la art. 14 alin. (3) din Legea nr. 677/2001.
 </p>

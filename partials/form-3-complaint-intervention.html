@@ -1,42 +1,49 @@
 <!-- Zona identificare cerere -->
 <div class="radio">
   <label>
-    <input type="radio" name="request.hasanswer" ng-model="$storage.request.notifyOtherParties" ng-value="false">
+    <input type="radio" name="request.hasanswer" ng-model="$storage.request.interventionViolation" ng-value="'fail'">
     Nu a rectificat/actualizat/blocat/șters/transformat datele
   </label>
 </div>
 
 <div class="radio">
   <label>
-    <input type="radio" name="request.hasanswer" ng-model="$storage.request.notifyOtherParties" ng-value="true">
+    <input type="radio" name="request.hasanswer" ng-model="$storage.request.interventionViolation" ng-value="'notify'">
     Nu a notificat terților măsurile de intervenție asupra datelor
   </label>
 </div>
 
+<div class="radio">
+  <label>
+    <input type="radio" name="request.hasanswer" ng-model="$storage.request.interventionViolation" ng-value="'answer'">
+    Nu a răspuns în termen de 15 zile
+  </label>
+</div>
+
 <label for="form-request.changetype">Datele nu au fost</label>
-<select id="form-request.changetype" name="$storage.request.changetype">
-  <option value="fix">rectificate</option>
-  <option value="update">actualizate</option>
-  <option value="block">blocate</option>
-  <option value="delete">șterse</option>
-  <option value="anonymize">transformate în date anonime</option>
+<select id="form-request.changetype" name="request.changetype" ng-model="$storage.request.changetype">
+  <option value="rectificat">rectificate</option>
+  <option value="actualizat">actualizate</option>
+  <option value="blocat">blocate</option>
+  <option value="șters">șterse</option>
+  <option value="transformat în date anonime">transformate în date anonime</option>
 </select>
 
-<div class="form-group" ng-if="! $storage.request.notifyOtherParties">
+<div class="form-group" ng-if="$storage.request.interventionViolation == 'fail'">
   <label for="form-request.violation">Datele au fost prelucrate</label>
-  <select id="form-request.violation" name="$storage.request.violation">
-    <option value="illegal">ilegal</option>
-    <option value="incomplete">incomplet</option>
-    <option value="inexact">inexact</option>
+  <select id="form-request.violation" name="request.violation" ng-model="$storage.request.violation">
+    <option>ilegal</option>
+    <option>incomplet</option>
+    <option>inexact</option>
   </select>
 </div>
 
-<div class="form-group" ng-if="$storage.request.notifyOtherParties">
+<div class="form-group" ng-if="$storage.request.interventionViolation == 'notify'">
   <label for="form-request.otherParties">Numele terților</label>
   <textarea id="form-request.otherParties" rows="5" class="form-control" ng-model="$storage.request.otherParties"></textarea>
 </div>
 
-<div class="form-group" ng-if="$storage.request.notifyOtherParties">
+<div class="form-group" ng-if="$storage.request.interventionViolation == 'answer'">
   <label for="form-request.dataDescription">Datele în cauză (opțional)</label>
   <textarea id="form-request.dataDescription" rows="5" class="form-control" ng-model="$storage.request.dataDescription"></textarea>
 </div>
