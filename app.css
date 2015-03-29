@@ -28,6 +28,11 @@
 }
 
 
+p {
+    text-align: justify;
+}
+
+
 @media screen {
     v {
         background: yellow;
