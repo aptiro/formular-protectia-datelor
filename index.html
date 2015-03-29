@@ -14,9 +14,7 @@
 <div class="container" ng-if="! formType">
   <h1>Gardianul datelor personale</h1>
 
-  <p>Datele personale nu trebuie să fie oricând la îndemâna oricui. Există limitări pentru cei care ajung în contact cu datele noastre.</p>
-  
-  <p>Protecția datelor personale este un drept fundamental, așa că dacă ți s-au încălcat drepturile sau vrei să semnalezi nereguli, poți folosi această pagină care te ghidează prin pași.</p> 
+  <p>Protecția datelor personale este un drept fundamental. Dacă ți s-au încălcat drepturile sau vrei să semnalezi nereguli, poți folosi această pagină care te ghidează prin pași.</p> 
   
   <p>#1 Află ce cauți. Încerci să identifici tipul de drept pe care vrei să-l exerciți. Ai o bănuială sau ai citit în Legea 677/2001 cam care sunt? Poate te ajută întrebările de mai jos.</p> 
   
@@ -25,18 +23,12 @@
   <p>#3 Faci plângere la Autoritatea pentru Protecția Datelor (ANSPDCP). Inspiră-te cu încredere din cererile de mai jos căci sunt reviuite de juriști. Dacă nu s-a rezolvat problema pentru care i-ai scris operatorului, ai opțiunea să te adresezi Autorității, iar aceasta va face investigații.</p>
 
   <ul class="list-unstyled">
-    <li>
-      <h3>Dreptul de acces înseamnă că...</h3>
-      <p>Vrei să întrebi operatorul dacă prelucrează sau nu date despre tine, vrei să știi ce date sunt colectate (+ o copie a datelor într-un format inteligibil), în ce condiții și cine are acces la ele.</p>
-      <p>
-        <button class="btn btn-sm btn-default" ng-click="selectFormtype('access')">Cerere către operator pentru dreptul de acces</button>
-        <button class="btn btn-sm btn-default" ng-click="selectFormtype('access')">Model de plângere drept de acces</button>
-      </p>
-    </li>
 
     <li>
       <h3>Dreptul de intervenție înseamnă că..</h3>
-      <p>Vrei ca operatorul să corecteze, actualizeze, blocheze sau să șteargă date personale. Pe unele e obligat să le transforme în date anonime.</p>
+      <p>Vrei ca operatorul să corecteze, actualizeze, blocheze sau să șteargă date personale? Pe unele e obligat să le transforme în date anonime.</p>
+      <p>De exemplu, după ce ți-ai închis abonamentul la operatorul de telefonie/Internet, poți să soliciți ștergerea definitivă a datelor tale; iar dacă nu sunt șterse, măcar să ți le anonimizeze.</p>
+      <p>Sau poți cere unui magazin online să îți șteargă istoricul comenzilor.</p>
       <p>
         <button class="btn btn-sm btn-default" ng-click="selectFormtype('intervention')">Cerere către operator pentru dreptul de intervenție</button>
         <button class="btn btn-sm btn-default" ng-click="selectFormtype('intervention')">Model de plângere drept de intervenție</button>
@@ -45,7 +37,8 @@
 
     <li>
       <h3>Dreptul de opoziție înseamnă că...</h3>
-      <p>Datele tale nu aveau din start ce să caute la operator (nu ți-ai dat consimțământul, nu are temei justificat de prelucrare etc), așa că nu vrei să le mai prelucreze. Nu vrei să mai primești newslettere, oferte, sms-uri promoționale etc. Nu este doar enervant, este și ilegal.</p>
+      <p>Datele tale nu aveau din start ce să caute la operator (nu ți-ai dat consimțământul, nu are temei justificat de prelucrare etc), așa că nu vrei să le mai prelucreze. 
+      <p>De exemplu, nu vrei să mai primești newslettere, oferte, sms-uri promoționale etc. Nu este doar enervant, este și ilegal. Scrii în motorul de căutare numele tău și descopri informații private despre tine.</p>
       <p>
         <button class="btn btn-sm btn-default" ng-click="selectFormtype('opposition')">Cerere către operator pentru dreptul de opoziție</button>
         <button class="btn btn-sm btn-default" ng-click="selectFormtype('opposition')">Model de plângere drept de opoziție</button>
@@ -60,6 +53,16 @@
         <button class="btn btn-sm btn-default" ng-click="selectFormtype('others')">Model de plângere pentru alte situații</button>
       </p>
     </li>
+    
+    <li>
+      <h3>Dreptul de acces înseamnă că...</h3>
+      <p>Vrei să întrebi operatorul dacă prelucrează sau nu date despre tine, vrei să știi ce date sunt colectate (+ o copie a datelor într-un format inteligibil), în ce condiții și cine are acces la ele.</p>
+      <p>
+        <button class="btn btn-sm btn-default" ng-click="selectFormtype('access')">Cerere către operator pentru dreptul de acces</button>
+        <button class="btn btn-sm btn-default" ng-click="selectFormtype('access')">Model de plângere drept de acces</button>
+      </p>
+    </li>
+
   </ul>
 </div>
 
