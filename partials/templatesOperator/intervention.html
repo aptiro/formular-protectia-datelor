@@ -1,0 +1,28 @@
+<p>CERERE DE INTERVENȚIE ASUPRA DATELOR</p>
+
+<p>Subsemnatul <v>{{ $storage.plaintiff.name || '(nume si prenume)' }}</v>, e-mail: <v>{{ $storage.plaintiff.email || '(email)' }}</v>, identificator unic: <v>{{ $storage.plaintiff.uniqueid || '(identificator unic)' }}</v></p>
+
+<p>
+  În baza art. 14 din Legea 677/2001 pentru protecția persoanelor cu privire la prelucrarea datelor cu caracter personal și libera circulație a acestor date, solicit dreptul de intervenție asupra datelor, 
+    <v><span ng-show="$storage.request.changetype == 'correct'">rectificarea</span></v>
+    <v><span ng-show="$storage.request.changetype == 'update'">actualizarea</span></v>
+    <v><span ng-show="$storage.request.changetype == 'block'">blocarea</span></v>
+    <v><span ng-show="$storage.request.changetype == 'delete'">ștergerea</span></v>
+  datelor.
+</p>
+<p>
+  De asemenea, solicit notificarea tuturor terților cărora le-au fost dezvăluite datele, despre efectuarea
+    <v><span ng-show="$storage.request.changetype == 'correct'">rectiifcării datelor.</span></v>
+    <v><span ng-show="$storage.request.changetype == 'update'">actualizării datelor.</span></v>
+    <v><span ng-show="$storage.request.changetype == 'block'">blocării datelor.</span></v>
+    <v><span ng-show="$storage.request.changetype == 'delete'">ștergerii datelor</span></v>
+    <span ng-show="$storage.request.changetype == 'delete'">
+      sau a anonimizării acestora acolo unde ștergerea ireversibilă și definitivă nu a fost posibilă din motive legal întemeiate pe care doresc să mi le prezentați.
+    </span>
+</p>
+<p> 
+  În cazul în care terții nu vor fi contactați, doresc să se demonstreze măsura în care această notificare s-a dovedit imposibilă sau a presupus un efort disproporționat față de interesul meu legitim de a îmi proteja datele cu caracter personal și viața privată. În acest sens, aduc în atenția dvs. dispozițiile art. 6 din Legea 677/2001 conform căruia la încheierea operațiunilor de prelucrare, datele cu caracter personal vor fi distruse, transferate unui alt operator sau transformate în date anonime și stocate exclusiv în scopuri statistice, de cercetare istorică sau științifică.
+</p>
+<p ng-show="$storage.request.changetype == 'delete'"> 
+  Subliniez că, în măsura în care datele mele au fost transferate unui alt operator, conform obligațiilor art. 6 din Legea 677/2001, și acesta este obligat la ștergerea ireversibilă și definitivă a datelor întrucât nu se mai poate vorbi de un scop de prelucrare similar prelucrării inițiale.
+</p>

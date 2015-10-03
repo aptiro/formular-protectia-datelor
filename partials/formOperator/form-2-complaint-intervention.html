@@ -1,0 +1,14 @@
+<label for="form-request.changetype">Doresc</label>
+<select id="form-request.changetype" name="request.changetype" ng-model="$storage.request.changetype" class="form-control">
+  <option value="correct">rectificarea datelor</option>
+  <option value="update">actualizarea datelor</option>
+  <option value="block">blocarea datelor</option>
+  <option value="delete">ștergerea datelor</option>
+</select>
+
+<p>
+  <a href="#finaize" class="forward" ng-click="goForward($event)">
+    pasul următor
+    <i class="fa fa-forward"></i>
+  </a>
+</p>

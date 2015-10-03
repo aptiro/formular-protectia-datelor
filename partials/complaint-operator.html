@@ -1,0 +1,27 @@
+<p class="headline">
+  Către <v>{{$storage.operator.name }}</v>
+</p>
+
+<div ng-if="formOperator == 'access' " ng-include="'partials/templatesOperator/access.html'"></div>
+<div ng-if="formOperator == 'intervention' " ng-include="'partials/templatesOperator/intervention.html'"></div>
+<div ng-if="formOperator == 'opposition' " ng-include="'partials/templatesOperator/opposition.html'"></div>
+<div ng-if="formOperator == 'others' " ng-include="'partials/templatesOperator/others.html'"></div>
+
+<p> 
+  Vă rog să confirmați primirea cererii la adresa de e-mail <v>{{ $storage.plaintiff.email }}</v>, iar răspunsul să îmi fie comunicat
+  <v><span ng-show="$storage.responseType=='email'">prin e-mail la adresa menționată</span><v>
+  <v><span ng-show="$storage.responseType=='post'">la adresa poștală</span><v>
+  <v><span ng-show="$storage.responseType=='courier'">prin curier cu livrare personală (conform art. 14 (2) din Legea 677/2001) la adresa </span><v>
+  <v><span ng-show="$storage.responseType=='post' || $storage.responseType=='courier'">{{ $storage.plaintiff.address || '(adresa)' }}</span></v>.
+</p>
+<p ng-hide="formOperator == 'others'">
+  Subliniez că termenul de răspuns pentru această solicitare este de 15 zile de la data primirii cererii, conform art. 15 (4) din Legea 677/2001.
+</p>
+
+<p>Data:
+  <v>{{($storage.date|date: 'd/M/yyyy') || '(data)'}}</v>
+</p>
+
+<p>Semnătura:
+  <v><i>{{$storage.plaintiff.name || '(semnătura)'}}</i></v>
+</p>

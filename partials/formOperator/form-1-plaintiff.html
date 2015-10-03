@@ -1,0 +1,28 @@
+<!-- Zona identificare petent -->
+<div class="form-group">
+  <label for="form-plaintiff.name">Numele și prenumele tău:</label>
+  <input id="form-plaintiff.name" type="text" class="form-control" ng-model="$storage.plaintiff.name" required>
+</div>
+
+<div class="form-group">
+  <label for="form-plaintiff.name">Nume operator:</label>
+  <input id="form-plaintiff.name" type="text" class="form-control" ng-model="$storage.operator.name" required>
+</div>
+
+<div class="form-group">
+  <label for="form-plaintiff.uniqueid">Identificator unic:</label><br />
+  <small>Un identificator unic in relatia cu operatorul: adresa de e-mail, id de utilizator, numar de contract, cod client, etc.</small>
+  <input id="form-plaintiff.uniqueid" type="text" class="form-control" ng-model="$storage.plaintiff.uniqueid" required>
+</div>
+
+<div class="form-group">
+  <label for="form-plaintiff.email">E-mail:</label>
+  <input id="form-plaintiff.email" type="email" class="form-control" ng-model="$storage.plaintiff.email">
+</div>
+
+<p>
+  <a href="#operator" class="forward" ng-click="goForward($event)">
+    pasul următor
+    <i class="fa fa-forward"></i>
+  </a>
+</p>

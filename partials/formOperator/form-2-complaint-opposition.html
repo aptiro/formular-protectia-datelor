@@ -1,0 +1,27 @@
+<!-- Zona identificare cerere -->
+<h2>Ma opun</h2>
+<div class="radio">
+  <label>
+    <input type="radio" name="request.marketing" ng-model="$storage.request.oppositionViolation" ng-value="'marketing'">
+    In scop de marketing
+  </label>
+</div>
+
+<div class="radio">
+  <label>
+    <input type="radio" name="request.marketing" ng-model="$storage.request.oppositionViolation" ng-value="'other'">
+    Alte motive decat cele de marketing
+  </label>
+</div>
+
+<div class="form-group" ng-show="$storage.request.oppositionViolation == 'other'">
+  <label for="form-request.objection">Motive de nemulțumire</label>
+  <textarea id="form-request.objection" rows="5" class="form-control" ng-model="$storage.request.objection"></textarea>
+</div>
+
+<p>
+  <a href="#finaize" class="forward" ng-click="goForward($event)">
+    pasul următor
+    <i class="fa fa-forward"></i>
+  </a>
+</p>

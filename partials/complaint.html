@@ -18,10 +18,10 @@
 </p>
 
 
-<div ng-if="formType == 'access' " ng-include="'partials/access.html'"></div>
-<div ng-if="formType == 'intervention' " ng-include="'partials/intervention.html'"></div>
-<div ng-if="formType == 'opposition' " ng-include="'partials/opposition.html'"></div>
-<div ng-if="formType == 'others' " ng-include="'partials/others.html'"></div>
+<div ng-if="formType == 'access' " ng-include="'partials/templatesModel/access.html'"></div>
+<div ng-if="formType == 'intervention' " ng-include="'partials/templatesModel/intervention.html'"></div>
+<div ng-if="formType == 'opposition' " ng-include="'partials/templatesModel/opposition.html'"></div>
+<div ng-if="formType == 'others' " ng-include="'partials/templatesModel/others.html'"></div>
 
 <p ng-if="$storage.request.other">
   <v>{{$storage.request.other}}</v>

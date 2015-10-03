@@ -21,6 +21,10 @@
             $scope.formType = name;
         };
 
+        $scope.selectFormOperator = function(name) {
+            $scope.formOperator = name;
+        }
+
         $scope.goForward = function(evt) {
             evt.preventDefault();
             var href = $(evt.target).attr('href');
@@ -34,7 +38,11 @@
         $scope.onSubmit = function() {
             var doc = new jsPDF();
 
-            var html = $('#document').html();
+            if(typeof $scope.formOperator !== 'undefined') {
+                var html = $('.documentOperator').html();
+            } else {
+                var html = $('.documentForm').html();
+            }
             var charmap = [
                 ['ș', 's'],
                 ['ț', 't'],

@@ -1,0 +1,16 @@
+<div class="form-group">
+  <label for="form-request.story">Descrierea situației</label>
+  <textarea id="form-request.story" rows="5" class="form-control" ng-model="$storage.request.story"></textarea>
+</div>
+
+<div class="form-group">
+  <label>Ce solicitati?</label>
+  <textarea rows="5" class="form-control" ng-model="$storage.request.requests"></textarea>
+</div>
+
+<p>
+  <a href="#finaize" class="forward" ng-click="goForward($event)">
+    pasul următor
+    <i class="fa fa-forward"></i>
+  </a>
+</p>

@@ -1,0 +1,14 @@
+<ul class="nav nav-tabs" role="tablist" style="margin-top: 2em;">
+  <li role="presentation" class="active"><a href="#operator-petent" role="tab" data-toggle="tab">1. Petent și operator</a></li>
+  <li role="presentation"><a href="#operator-cerere" role="tab" data-toggle="tab">2. Cerere</a></li>
+  <li role="presentation"><a href="#operator-finalize" role="tab" data-toggle="tab">3. Final</a></li>
+</ul>
+
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="operator-petent" ng-include="'partials/formOperator/form-1-plaintiff.html'"></div>
+  <div role="tabpanel" class="tab-pane" id="operator-cerere" ng-include="'partials/formOperator/form-2-complaint-intervention.html'" ng-if="formOperator == 'intervention'"></div>
+  <div role="tabpanel" class="tab-pane" id="operator-cerere" ng-include="'partials/formOperator/form-2-complaint-access.html'" ng-if="formOperator == 'access'"></div>
+  <div role="tabpanel" class="tab-pane" id="operator-cerere" ng-include="'partials/formOperator/form-2-complaint-opposition.html'" ng-if="formOperator == 'opposition'"></div>
+  <div role="tabpanel" class="tab-pane" id="operator-cerere" ng-include="'partials/formOperator/form-2-complaint-others.html'" ng-if="formOperator == 'others'"></div>
+  <div role="tabpanel" class="tab-pane" id="operator-finalize" ng-include="'partials/formOperator/form-3-final.html'"></div>
+</div>
