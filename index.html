@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="dataProtection">
+<html ng-app="dataProtection" class="js">
 <head>
   <meta charset="UTF-8">
   <title>Privacy complaint</title>
@@ -10,83 +10,140 @@
   <link rel="stylesheet" href="app.css">
 </head>
 
-<body ng-controller="DataProtectionFormController">
-<div class="container" ng-if="!formType && !formOperator">
-  <h1>Gardianul datelor personale</h1>
+<body ng-controller="DataProtectionFormController" id="wrapper">
 
-  <p>Protecția datelor personale este un drept fundamental. Dacă ți s-au încălcat drepturile sau vrei să semnalezi nereguli, poți folosi această pagină care te ghidează prin pași.</p> 
-  
-  <p>#1 Află ce cauți. Încerci să identifici tipul de drept pe care vrei să-l exerciți. Ai o bănuială sau ai citit în Legea 677/2001 cam care sunt? Poate te ajută întrebările de mai jos.</p> 
-  
-  <p>#2 Contactezi operatorul. Prima oară cu el discuți. Întotdeauna. Urmând pașii din meniu, (în curând o să) găsești și sugestii de modele de cerere către operator.</p>
-  
-  <p>#3 Faci plângere la Autoritatea pentru Protecția Datelor (ANSPDCP). Inspiră-te cu încredere din cererile de mai jos căci sunt reviuite de juriști. Dacă nu s-a rezolvat problema pentru care i-ai scris operatorului, ai opțiunea să te adresezi Autorității, iar aceasta va face investigații.</p>
+<div id="container">
 
-  <ul class="list-unstyled">
 
-    <li>
-      <h3>Dreptul de intervenție înseamnă că..</h3>
-      <p>Vrei ca operatorul să corecteze, actualizeze, blocheze sau să șteargă date personale? Pe unele e obligat să le transforme în date anonime.</p>
-      <p>De exemplu, după ce ți-ai închis abonamentul la operatorul de telefonie/Internet, poți să soliciți ștergerea definitivă a datelor tale; iar dacă nu sunt șterse, măcar să ți le anonimizeze.</p>
-      <p>Sau poți cere unui magazin online să îți șteargă istoricul comenzilor.</p>
-      <p>
-        <button class="btn btn-sm btn-default" ng-click="selectFormOperator('intervention')">Cerere către operator pentru dreptul de intervenție</button>
-        <button class="btn btn-sm btn-default" ng-click="selectFormtype('intervention')">Model de plângere drept de intervenție</button>
-      </p>
-    </li>
-
-    <li>
-      <h3>Dreptul de opoziție înseamnă că...</h3>
-      <p>Datele tale nu aveau din start ce să caute la operator (nu ți-ai dat consimțământul, nu are temei justificat de prelucrare etc), așa că nu vrei să le mai prelucreze. 
-      <p>De exemplu, nu vrei să mai primești newslettere, oferte, sms-uri promoționale etc. Nu este doar enervant, este și ilegal. Scrii în motorul de căutare numele tău și descoperi informații private despre tine.</p>
-      <p>
-        <button class="btn btn-sm btn-default" ng-click="selectFormOperator('opposition')">Cerere către operator pentru dreptul de opoziție</button>
-        <button class="btn btn-sm btn-default" ng-click="selectFormtype('opposition')">Model de plângere drept de opoziție</button>
-      </p>
-    </li>
-
-    <li>
-      <h3>Alte cazuri când ți s-au încălcat drepturile?</h3>
-      <p>Pentru orice alte nereguli, neacoperite de situațiile de mai sus, ai modelele mai jos.</p>
-      <p>
-        <button class="btn btn-sm btn-default" ng-click="selectFormOperator('others')">Cerere către operator pentru alte situații</button>
-        <button class="btn btn-sm btn-default" ng-click="selectFormtype('others')">Model de plângere pentru alte situații</button>
-      </p>
-    </li>
+	<header id="header">
     
-    <li>
-      <h3>Dreptul de acces înseamnă că...</h3>
-      <p>Vrei să întrebi operatorul dacă prelucrează sau nu date despre tine, vrei să știi ce date sunt colectate (+ o copie a datelor într-un format inteligibil), în ce condiții și cine are acces la ele.</p>
-      <p>
-        <button class="btn btn-sm btn-default" ng-click="selectFormOperator('access')">Cerere către operator pentru dreptul de acces</button>
-        <button class="btn btn-sm btn-default" ng-click="selectFormtype('access')">Model de plângere drept de acces</button>
-      </p>
-    </li>
+		<div class="header-content">
+		  <a href="https://privacy.apti.ro/"><img alt="Date personale si viata privata" src="https://privacy.apti.ro/wp-content/uploads/2014/09/header2.png" class="header-logo"></a>
+		  <p class="site-description">Date personale și viață privată &ndash; despre privacy în România</p>
+		</div>
+		<div class="menu-box">
+		  <div class="navigation-pattern"></div>
+			<a href="https://privacy.apti.ro/" class="link-home"></a>
+			<div class="menu-top-container">
+				<ul class="menu" id="nav">
+					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-226" id="menu-item-226"><a href="https://privacy.apti.ro/ghid-confidentialitate/" title="Aplicatii software pentru protectia vietii private">Unelte privacy</a></li>
+					<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-306" id="menu-item-306"><a href="https://privacy.apti.ro/vi-s-au-incalcat-drepturile-actionati/">Vi s-au încălcat drepturile? Acționați!</a></li>
+					<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1449" id="menu-item-1449"><a href="https://privacy.apti.ro/articole-concurs/">Articole concurs</a></li>
+					<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1984" id="menu-item-1984"><a href="https://privacy.apti.ro/video-educationale-privacy/">Video educaționale</a></li>
+				</ul>
+				<select id="selectnav1" class="selectnav">
+					<option value="">- MENU -</option>
+					<option value="https://privacy.apti.ro/ghid-confidentialitate/">Unelte privacy</option>
+					<option value="https://privacy.apti.ro/vi-s-au-incalcat-drepturile-actionati/">Vi s-au încălcat drepturile? Acționați!</option>
+					<option value="https://privacy.apti.ro/articole-concurs/">Articole concurs</option><option value="https://privacy.apti.ro/video-educationale-privacy/">Video educaționale</option>
+				</select>
+			</div>    
+		</div>
+		
+	  </header>
+	
 
-  </ul>
+
+	<div id="main-content" class="formular-container" >
+
+		<div class="container" ng-if="!formType && !formOperator">
+			<div class="content-center top-main">
+				<h1 class="main">Gardianul datelor personale</h1>
+				<p>Protecția datelor personale este un drept fundamental. Dacă ți s-au încălcat drepturile sau vrei să semnalezi nereguli, poți folosi această pagină care te ghidează prin pași.</p> 
+			</div>
+			
+			<div class="steps">
+				<div><span><h3>Află ce cauți.</h3></span><p>Încerci să identifici tipul de drept pe care vrei să-l exerciți. 
+				Ai o bănuială sau ai citit în Legea 677/2001 cam care sunt? Poate te ajută întrebările de mai jos.</p></div> 
+				<div><span><h3>Contactezi operatorul.</h3></span><p>Prima oară cu el discuți. Întotdeauna. Urmând pașii din meniu, (în curând o să) găsești și sugestii de modele de cerere către operator.</p></div>
+				<div><span><h3>Faci plângere</h3></span><p>la Autoritatea pentru Protecția Datelor (ANSPDCP). Inspiră-te cu încredere din cererile de mai jos căci sunt reviuite de juriști. 
+				Dacă nu s-a rezolvat problema pentru care i-ai scris operatorului, ai opțiunea să te adresezi Autorității, iar aceasta va face investigații.</p></div>
+			</div>
+
+			
+		  <ul class="list-unstyled select-form">
+
+			<li>
+			  <h3>Dreptul de intervenție înseamnă că..</h3>
+			  <p>Vrei ca operatorul să corecteze, actualizeze, blocheze sau să șteargă date personale? Pe unele e obligat să le transforme în date anonime.</p>
+			  <p>De exemplu, după ce ți-ai închis abonamentul la operatorul de telefonie/Internet, poți să soliciți ștergerea definitivă a datelor tale; iar dacă nu sunt șterse, măcar să ți le anonimizeze.</p>
+			  <p>Sau poți cere unui magazin online să îți șteargă istoricul comenzilor.</p>
+			  <p>
+				<button class="btn btn-sm btn-default" ng-click="selectFormOperator('intervention')">Cerere către operator pentru dreptul de intervenție</button>
+				<button class="btn btn-sm btn-default" ng-click="selectFormtype('intervention')">Model de plângere drept de intervenție</button>
+			  </p>
+			</li>
+
+			<li>
+			  <h3>Dreptul de opoziție înseamnă că...</h3>
+			  <p>Datele tale nu aveau din start ce să caute la operator (nu ți-ai dat consimțământul, nu are temei justificat de prelucrare etc), așa că nu vrei să le mai prelucreze. 
+			  <p>De exemplu, nu vrei să mai primești newslettere, oferte, sms-uri promoționale etc. Nu este doar enervant, este și ilegal. Scrii în motorul de căutare numele tău și descoperi informații private despre tine.</p>
+			  <p>
+				<button class="btn btn-sm btn-default" ng-click="selectFormOperator('opposition')">Cerere către operator pentru dreptul de opoziție</button>
+				<button class="btn btn-sm btn-default" ng-click="selectFormtype('opposition')">Model de plângere drept de opoziție</button>
+			  </p>
+			</li>
+
+			<li>
+			  <h3>Alte cazuri când ți s-au încălcat drepturile?</h3>
+			  <p>Pentru orice alte nereguli, neacoperite de situațiile de mai sus, ai modelele mai jos.</p>
+			  <p>
+				<button class="btn btn-sm btn-default" ng-click="selectFormOperator('others')">Cerere către operator pentru alte situații</button>
+				<button class="btn btn-sm btn-default" ng-click="selectFormtype('others')">Model de plângere pentru alte situații</button>
+			  </p>
+			</li>
+			
+			<li>
+			  <h3>Dreptul de acces înseamnă că...</h3>
+			  <p>Vrei să întrebi operatorul dacă prelucrează sau nu date despre tine, vrei să știi ce date sunt colectate (+ o copie a datelor într-un format inteligibil), în ce condiții și cine are acces la ele.</p>
+			  <p>
+				<button class="btn btn-sm btn-default" ng-click="selectFormOperator('access')">Cerere către operator pentru dreptul de acces</button>
+				<button class="btn btn-sm btn-default" ng-click="selectFormtype('access')">Model de plângere drept de acces</button>
+			  </p>
+			</li>
+
+		  </ul>
+		</div>
+
+		<div class="container" ng-if="formType || formOperator">
+		  <h1 ng-show="formType">Model de plângere către Autoritatea de Protecție a Datelor (ANSPDCP)</h1>
+		  <h1 ng-show="formType">Model de plângere către operator</h1>
+
+		  <div class="row">
+
+			<div class="col-md-5">
+			  <form ng-submit="onSubmit()" class="formType" ng-include="'partials/formModel/form.html'" ng-show="formType"></form>
+			  <form ng-submit="onSubmit()" class="formOperator" ng-include="'partials/formOperator/form.html'" ng-show="formOperator"></form>
+			</div>
+
+			<div id="preview" class="col-md-7">
+				
+			
+			  <div class="document documentForm" ng-include="'partials/complaint.html'" ng-show="formType"></div>
+			  <div class="document documentOperator" ng-include="'partials/complaint-operator.html'" ng-show="formOperator"></div>
+				
+				<button class="btn btn-primary download-pdf" ng-click="downloadPdf($event)">
+					<i class="fa fa-download"></i>Download PDF
+				</button>
+			  
+			</div>
+		  </div>
+		</div>
+
+	</div>
+	
+	
+	<footer id="wrapper-footer">
+
+
+<div class="footer-signature"><div class="footer-signature-content">			<div class="textwidget"><a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" style="border-width:0" alt="Creative Commons License"></a><br> Toate creațiile originale publicate pe acest blog sunt disponibile sunt licența <a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</div>
+		</div></div><div class="footer-signature"><div class="footer-signature-content">			<div class="textwidget"><p>Proiectul "Protectia datelor personale este un drept fundamental!" este finanțat prin granturile SEE 2009-2014, în cadrul Fondului ONG în România. Conținutul acestui website nu reprezintă în mod necesar poziția oficială a granturilor SEE 2009-2014. Întreaga răspundere asupra corectitudinii și coerenței informațiilor prezentate revine inițiatorilor website-ului.<br>
+Pentru informații oficiale despre granturile SEE și norvegiene accesați <a href="http://www.eeagrants.org">http://www.eeagrants.org</a></p>
 </div>
-
-<div class="container" ng-if="formType || formOperator">
-  <h1 ng-show="formType">Model de plângere către Autoritatea de Protecție a Datelor (ANSPDCP)</h1>
-  <h1 ng-show="formType">Model de plângere către operator</h1>
-
-  <div class="row">
-
-    <div class="col-md-5">
-      <form ng-submit="onSubmit()" class="formType" ng-include="'partials/formModel/form.html'" ng-show="formType"></form>
-      <form ng-submit="onSubmit()" class="formOperator" ng-include="'partials/formOperator/form.html'" ng-show="formOperator"></form>
-    </div>
-
-    <div id="preview" class="col-md-7">
-      <div class="document documentForm" ng-include="'partials/complaint.html'" ng-show="formType"></div>
-      <div class="document documentOperator" ng-include="'partials/complaint-operator.html'" ng-show="formOperator"></div>
-
-      <button class="btn btn-primary download-pdf" ng-click="downloadPdf($event)">
-        <i class="fa fa-download"></i>
-        Download PDF
-      </button>
-    </div>
-  </div>
+		</div></div>
+</footer>
+	
+	
 </div>
 
 <script src="bower_components/angular/angular.js"></script>

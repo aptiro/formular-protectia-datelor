@@ -1,14 +1,17 @@
-<label for="form-request.changetype">Doresc</label>
-<select id="form-request.changetype" name="request.changetype" ng-model="$storage.request.changetype" class="form-control">
-  <option value="correct">rectificarea datelor</option>
-  <option value="update">actualizarea datelor</option>
-  <option value="block">blocarea datelor</option>
-  <option value="delete">ștergerea datelor</option>
-</select>
-
+<h3 role="presentation"><a href="#operator-cerere" role="tab" data-toggle="tab">2. Cerere</a></h3>
+<label for="form-request.changetype"><p>Doresc</p></label>
+<div class="select-style">
+	<select id="form-request.changetype" name="request.changetype" ng-model="$storage.request.changetype" class="form-control">
+	<option value="correct">rectificarea datelor</option>
+	<option value="update">actualizarea datelor</option>
+	<option value="block">blocarea datelor</option>
+	<option value="delete">ștergerea datelor</option>
+	</select>
+</div>
+<!--
 <p>
   <a href="#operator-finalize" class="forward" ng-click="goForward($event)">
     pasul următor
     <i class="fa fa-forward"></i>
   </a>
-</p>
+</p>-->
