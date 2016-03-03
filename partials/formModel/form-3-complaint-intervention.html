@@ -44,19 +44,9 @@
 </div>
 
 <div class="form-group" ng-if="$storage.request.interventionViolation == 'notify'">
-  <!--<label for="form-request.otherParties">Numele terților</label>-->
   <textarea id="form-request.otherParties" rows="5" class="form-control" ng-model="$storage.request.otherParties" placeholder="Numele terților"></textarea>
 </div>
 
 <div class="form-group" ng-if="$storage.request.interventionViolation == 'answer'">
-  <!--<label for="form-request.dataDescription">Datele în cauză (opțional)</label>-->
   <textarea id="form-request.dataDescription" rows="5" class="form-control" ng-model="$storage.request.dataDescription" placeholder="Datele în cauză (opțional)"></textarea>
 </div>
-
-<!--
-<p>
-  <a href="#finaize" class="forward" ng-click="goForward($event)">
-    pasul următor
-    <i class="fa fa-forward"></i>
-  </a>
-</p>-->

@@ -105,16 +105,12 @@ img {
   height: auto; 
   max-width: 100%;   
 }
-
-
 #container {
     margin: 0 auto;
     max-width: 1012px;
     position: relative;
     width: 100%;
 }
-
-
 #wrapper #main-content {
     padding: 28px 28px 10px;
     width: 956px;
@@ -126,16 +122,6 @@ img {
     position: relative;
     width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
 
 /* basic structure
 -------------------------------------------------------------- */
@@ -843,14 +829,6 @@ way to fit your requirements. */
 .post-edit-link {
   font-weight: bold;                
 }
-
-
-
-
-
-
-
-
 /* main content form styling - starts */
 
 #wrapper #main-content.formular-container {
@@ -870,12 +848,6 @@ way to fit your requirements. */
 .formular-container .tab-pane.ng-scope:last-child{
 	border-bottom:0px solid #d9d9d9;
 }
-/*
-.formular-container .form-group.ng-scope:last-child{
-	border-top:1px solid #d9d9d9;
-	margin-top:17px;
-}*/
-
 .formular-container .container .content-center{
 	text-align:center;
 }
@@ -1062,11 +1034,7 @@ ul.select-form button{
 }
 
 /* main content form styling - ends */
-
-.formOperator{
-	
-}
-
+.formOperator{}
 
 .form-group.ng-scope,
 .form-group{
@@ -1087,9 +1055,6 @@ ul.select-form button{
 	max-width:332px;
 	box-shadow: none;
 }
-
-
-
 
 .form-group input:placeholder{
 	opacity: 1 !important;color:#426398;font-weight:bold;
@@ -1190,7 +1155,6 @@ label.ng-scope p{
 	margin:5px 0px;
 }
 
-
 .form-group.date .quickdate {
     display: inline-block;
     position: relative;
@@ -1206,7 +1170,6 @@ label.ng-scope p{
     font-weight: bold;
     height: 25px;
     line-height: 25px;
-	
 	background: rgba(242, 242, 242, 1) none repeat scroll 0 0;
     border: 1px solid #e6e6e6;
 }
@@ -1258,27 +1221,7 @@ label.other{
     font-size: 18px;
     margin-top: 20px;
 }
-/*
-.select-style:after{
-	border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 7px solid #fff;
-    content: "";
-    position: absolute;
-    right: 6px;
-    top: 7px;
-	cursor:pointer;
-}
 
-.select-style::before{
-	background-color: #214988;
-    content: "";
-    height: 25px;
-    position: absolute;
-    right: 0;
-    width: 26px;
-	cursor:pointer;
-}*/
 
 .form-group.ng-scope strong{
 	font-size:12px;
