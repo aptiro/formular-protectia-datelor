@@ -834,6 +834,41 @@ way to fit your requirements. */
 #wrapper #main-content.formular-container {
 	padding-bottom:40px;
 }
+
+/* Column styling */
+.formular-container .container.ng-scope .row{
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.formular-container .container.ng-scope .row:after, 
+.formular-container .container.ng-scope .row:before{
+  display: table;
+  content: " ";
+}
+.formular-container .container.ng-scope .row:after{
+  clear: both;
+}
+.formular-container .container.ng-scope .col-md-5,
+.formular-container .container.ng-scope .col-md-7{
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.formular-container .container.ng-scope .col-md-5{
+  width: 41.66666667%;
+}
+.formular-container .container.ng-scope .col-md-7{
+  width: 58.33333333%;
+}
+.formular-container .container.ng-scope .document{
+  width: auto;
+}
+
 /* special case selector - don't delete the selector*/
 #main-content.formular-container > .container.ng-scope .formOperator #operator-finalize .form-group.ng-scope:last-child{
 	border-top:1px solid #d9d9d9;
