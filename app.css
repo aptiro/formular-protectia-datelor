@@ -1563,6 +1563,10 @@ p {
 		margin-top:10px;
 		margin-bottom:5px;
 	}
+    .formular-container .container.ng-scope .col-md-5,
+    .formular-container .container.ng-scope .col-md-7{
+      width: 100%;
+    }
 	.document{
 		width:auto;
 	}
