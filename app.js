@@ -19,10 +19,52 @@
 
         $scope.selectFormtype = function(name) {
             $scope.formType = name;
+
+            setTimeout(function(){
+              //do this after view has loaded :)
+              var $sidebar   = $("#preview"), 
+                      $window    = $(window),
+                      offset     = $sidebar.offset(),
+                      topPadding = 15;
+
+                  $window.scroll(function() {
+                      if ($window.scrollTop() > offset.top && ($window.width() > 1012)) {
+                          $sidebar.stop().animate({
+                              top: $window.scrollTop() - offset.top + topPadding
+                          });
+                      } else {
+                          $sidebar.stop().animate({
+                              top: 0
+                          });
+                      }
+                  });
+            }, 0);
+
         };
 
         $scope.selectFormOperator = function(name) {
             $scope.formOperator = name;
+
+            setTimeout(function(){
+              //do this after view has loaded :)
+              var $sidebar   = $("#preview"), 
+                      $window    = $(window),
+                      offset     = $sidebar.offset(),
+                      topPadding = 15;
+
+                  $window.scroll(function() {
+                      if ($window.scrollTop() > offset.top && ($window.width() > 1012)) {
+                          $sidebar.stop().animate({
+                              top: $window.scrollTop() - offset.top + topPadding
+                          });
+                      } else {
+                          $sidebar.stop().animate({
+                              top: 0
+                          });
+                      }
+                  });
+            }, 0);
+
         }
 
         $scope.goForward = function(evt) {
