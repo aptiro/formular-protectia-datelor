@@ -109,6 +109,9 @@
                     }
                 }
             });
+
+            if(window._paq) { _paq.push(['trackEvent', 'Download', 'PDF']) }
+
             doc.save('document.pdf');
         };
 
